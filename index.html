@@ -268,18 +268,176 @@
     </div>
 </div>
 <!-- TopAppBar -->
-<nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-black tracking-tighter text-neutral-100 uppercase font-headline">BonBern</div>
-<div class="hidden md:flex items-center gap-12">
-<a class="font-headline tracking-tighter uppercase text-sm text-neutral-400 hover:text-red-400 transition-all duration-300" href="#">Labs</a>
-<a class="font-headline tracking-tighter uppercase text-sm text-red-500 font-bold border-b-2 border-red-500 pb-1" href="#">Perception</a>
-<a class="font-headline tracking-tighter uppercase text-sm text-neutral-400 hover:text-red-400 transition-all duration-300" href="#">Manifesto</a>
-<a class="font-headline tracking-tighter uppercase text-sm text-neutral-400 hover:text-red-400 transition-all duration-300" href="#">Contact</a>
-</div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 font-headline tracking-tighter uppercase text-sm scale-95 active:opacity-80 transition-all cursor-pointer">
-        Inquire
+<nav id="main-nav" class="fixed top-0 w-full z-50 border-b border-transparent transition-all duration-300 bg-neutral-950/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 w-full max-w-screen-2xl items-center justify-between px-6 md:px-8">
+    <a href="#" class="text-2xl font-black tracking-tighter text-white uppercase font-headline hidden md:block">BonBern</a>
+    <a href="#" class="text-xl font-black tracking-tighter text-white uppercase font-headline md:hidden">BonBern</a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="hidden md:flex items-center justify-center gap-2 font-headline uppercase text-xs tracking-widest font-bold">
+      <!-- Nav Item 1: Solutions -->
+      <div class="relative group px-4 py-6 cursor-pointer">
+        <span class="text-neutral-400 group-hover:text-white transition-colors flex items-center gap-1 group-hover/text-white">
+          Products <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </span>
+        <div class="absolute left-1/2 -translate-x-1/2 top-[100%] mt-0 w-[480px] bg-[#0a0a0a] border border-white/5 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 p-2 overflow-hidden flex flex-col pointer-events-none group-hover:pointer-events-auto backdrop-blur-3xl">
+           <div class="grid grid-cols-2 gap-2 bg-black/50 rounded-lg p-2">
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">psychology</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Perception Eng.</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Control public narratives.</span>
+                 </div>
+              </a>
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">fingerprint</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Behavior Decoding</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Analyze hidden signals.</span>
+                 </div>
+              </a>
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">campaign</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Product Alpha</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Core software layer.</span>
+                 </div>
+              </a>
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Product Beta</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Automated signal scaling.</span>
+                 </div>
+              </a>
+           </div>
+           <div class="p-4 mt-1 bg-gradient-to-r from-red-500/5 to-transparent rounded-lg">
+             <p class="text-xs text-neutral-400 font-label tracking-widest normal-case">Interested? <a href="#" class="text-white font-bold ml-1 hover:underline">Schedule a demo →</a></p>
+           </div>
+        </div>
+      </div>
+
+      <!-- Nav Item 2: Company -->
+      <div class="relative group px-4 py-6 cursor-pointer">
+        <span class="text-neutral-400 group-hover:text-white transition-colors flex items-center gap-1 group-hover/text-white">
+          Company <span class="material-symbols-outlined text-[14px]">expand_more</span>
+        </span>
+        <div class="absolute left-1/2 -translate-x-1/2 top-[100%] mt-0 w-[450px] bg-[#0a0a0a] border border-white/5 rounded-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0 p-2 overflow-hidden flex pointer-events-none group-hover:pointer-events-auto gap-2 backdrop-blur-3xl">
+           <div class="flex-1 bg-black/50 rounded-lg p-2 flex flex-col gap-1">
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">About Us</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Learn our story.</span>
+                 </div>
+              </a>
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">stars</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Customer Stories</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Records of influence.</span>
+                 </div>
+              </a>
+              <a href="#" class="flex flex-row gap-3 items-center p-3 rounded-lg hover:bg-white/5 transition-colors group/item">
+                 <div class="bg-black border border-white/10 w-10 h-10 flex items-center justify-center rounded-md text-neutral-400 group-hover/item:text-white shadow">
+                    <span class="material-symbols-outlined text-[20px]">handshake</span>
+                 </div>
+                 <div class="flex flex-col">
+                    <span class="text-white text-xs font-bold uppercase tracking-wider">Partnerships</span>
+                    <span class="text-neutral-500 text-[10px] tracking-normal font-body normal-case mt-0.5">Collaborations for growth.</span>
+                 </div>
+              </a>
+           </div>
+
+           <div class="w-[180px] bg-transparent p-3 flex flex-col gap-2 border-l border-white/5">
+               <a href="#" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">newspaper</span>
+                  <span class="normal-case tracking-normal font-body text-sm font-medium">Blog</span>
+               </a>
+               <a href="#" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">support_agent</span>
+                  <span class="normal-case tracking-normal font-body text-sm font-medium">Help Center</span>
+               </a>
+               <a href="#" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 text-neutral-400 hover:text-white transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">menu_book</span>
+                  <span class="normal-case tracking-normal font-body text-sm font-medium">Terms & Privacy</span>
+               </a>
+           </div>
+        </div>
+      </div>
+
+      <!-- Nav Item 3 -->
+      <a href="#" class="px-4 py-6 text-neutral-400 hover:text-white transition-colors">Pricing</a>
+      <a href="#" class="px-4 py-6 text-neutral-400 hover:text-white transition-colors">Contact</a>
+    </div>
+    
+    <!-- CTA Group -->
+    <div class="hidden md:flex items-center gap-4">
+      <a href="#" class="text-xs font-headline uppercase tracking-widest text-neutral-400 hover:text-white transition-colors font-bold px-4 py-2 border border-white/10 rounded hover:bg-white/5">Sign In</a>
+      <button class="bg-primary text-white px-6 py-2 rounded hover:bg-red-500 transition-colors font-headline font-bold uppercase tracking-widest text-xs shadow-[0_0_15px_rgba(255,59,48,0.3)] hover:shadow-[0_0_20px_rgba(255,59,48,0.5)]">
+         Get Started
+      </button>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-white hover:bg-white/5 rounded-md transition-colors" aria-label="Toggle menu">
+       <span class="material-symbols-outlined" id="mobile-menu-icon" style="transition: transform 0.3s ease-in-out;">menu</span>
     </button>
+  </div>
 </nav>
+
+<!-- Mobile Drawer -->
+<div id="mobile-menu" class="fixed inset-0 top-[64px] z-40 bg-neutral-950/95 backdrop-blur-3xl border-t border-white/5 flex flex-col overflow-y-auto px-6 py-8 transition-all duration-300 ease-out md:hidden" style="transform: scale(0.98); opacity: 0; pointer-events: none;">
+   <div class="flex flex-col gap-8 w-full pb-20">
+      <div class="flex flex-col gap-6">
+         <!-- Product Mobile -->
+         <div class="flex flex-col gap-3">
+            <span class="text-neutral-500 text-[10px] font-bold uppercase tracking-widest">Product</span>
+            <div class="w-full h-px bg-white/10"></div>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Perception Eng. <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Behavior Decoding <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Product Alpha <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Product Beta <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+         </div>
+
+         <!-- Company Mobile -->
+         <div class="flex flex-col gap-3 mt-4">
+            <span class="text-neutral-500 text-[10px] font-bold uppercase tracking-widest">Company</span>
+            <div class="w-full h-px bg-white/10"></div>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">About Us <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Customer Stories <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Partnerships <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Blog <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+         </div>
+
+         <!-- General Mobile -->
+         <div class="flex flex-col gap-3 mt-4">
+            <span class="text-neutral-500 text-[10px] font-bold uppercase tracking-widest">General</span>
+            <div class="w-full h-px bg-white/10"></div>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Pricing <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+            <a href="#" class="flex text-white font-headline text-xl uppercase tracking-tight items-center justify-between group py-1">Contact <span class="material-symbols-outlined text-red-500">chevron_right</span></a>
+         </div>
+      </div>
+      
+      <!-- CTA Mobile -->
+      <div class="mt-8 flex flex-col gap-4">
+         <button class="w-full py-4 rounded-lg border border-white/20 hover:bg-white/10 text-white font-headline uppercase text-sm tracking-widest font-bold transition-colors">Sign In</button>
+         <button class="w-full py-4 rounded-lg bg-primary text-white font-headline uppercase text-sm tracking-widest font-bold shadow-[0_0_15px_rgba(255,59,48,0.3)]">Get Started</button>
+      </div>
+   </div>
+</div>
 <main class="relative z-10 w-full bg-[#050505] rounded-b-[40px] border-b border-white/10 shadow-2xl pb-10">
 <!-- Hero Section: Video Matte -->
 <section class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -650,9 +808,11 @@
           </a>
         </div>
         <div class="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-4 font-label">
-          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none">Privacy</a>
-          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none">Intelligence</a>
-          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none">Terms</a>
+          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Products</a>
+          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Company</a>
+          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Pricing</a>
+          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Privacy</a>
+          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-400 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Terms</a>
         </div>
       </div>
     </div>
@@ -846,6 +1006,33 @@
         }
         ctaSubmit.addEventListener('click', submitFromCTA);
         ctaInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') submitFromCTA(); });
+
+        // --- Mobile Menu Logic ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = document.getElementById('mobile-menu-icon');
+        let isMobileMenuOpen = false;
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                isMobileMenuOpen = !isMobileMenuOpen;
+                if (isMobileMenuOpen) {
+                    document.body.style.overflow = 'hidden';
+                    mobileMenu.style.pointerEvents = 'auto';
+                    mobileMenu.style.opacity = '1';
+                    mobileMenu.style.transform = 'scale(1)';
+                    mobileIcon.style.transform = 'rotate(-180deg)';
+                    mobileIcon.textContent = 'close';
+                } else {
+                    document.body.style.overflow = '';
+                    mobileMenu.style.pointerEvents = 'none';
+                    mobileMenu.style.opacity = '0';
+                    mobileMenu.style.transform = 'scale(0.98)';
+                    mobileIcon.style.transform = 'rotate(0deg)';
+                    mobileIcon.textContent = 'menu';
+                }
+            });
+        }
 
         // --- Cinematic Motion Footer Logic ---
         const footerWrapper = document.getElementById('footer-wrapper');
