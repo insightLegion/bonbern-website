@@ -1,0 +1,14 @@
+GSAP skills- animation libary
+Cinematic step-by-step hero reveal
+Lenis ↔ ScrollTrigger fully synced
+scroll driven animations
+
+woxsenstudentcouncil.com
+
+during one shot first prompt in agent:
+STARTING SHIT WEBSITE -> NO ANIMATIONS
+ASK FOR SUGGESTIONS FROM THE AI-> ASK - THIS PAGE LOOK SO UNINTERESTING!  AND GENERIC~! ITS TOO SIMPLE! SUGGEST ON WHAT WE CAN DO TO MAKE THEM BETTER! IT DOESNT LOOK ATTRACTIVE AT ALL! GIVE DIFFERENT KIND FO SUGGESTIONS FOR ME TO CHOOSE AND MAKE IT LOOK COOL AND AWESOME
+cinematic GSAP hero with step-by-step reveal
+
+
+ScrollReveal, and refresh ScrollTrigger on route change
