@@ -282,6 +282,11 @@ h1, h2, h3, h4, h5, h6, .font-title {
     transition: all 0.3s ease;
 }
 
+.navbar-brand {
+    font-family: 'Avenir Next', system-ui, -apple-system, sans-serif !important;
+    font-weight: 700 !important;
+}
+
 .navbar-pill:hover {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
@@ -726,6 +731,74 @@ h1, h2, h3, h4, h5, h6, .font-title {
     .work-card {
         min-height: 300px !important;
     }
+}
+
+/* ===== PROCESS CARDS ===== */
+.process-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.75rem;
+    padding: 2.25rem;
+    transition: all 0.5s var(--ease-spring);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(226, 48, 40, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+        0 0 30px -5px rgba(226, 48, 40, 0.2);
+}
+
+.process-card .process-num {
+    font-family: var(--font-title);
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.15);
+    transition: color 0.4s ease;
+}
+
+.process-card:hover .process-num {
+    color: var(--accent);
+}
+
+.social-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(226, 48, 40, 0.35);
+}
+
+/* Global Floating CTA Animation */
+@keyframes float-pulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+#global-floating-cta .floating-cta-inner {
+    animation: float-pulse 4s ease-in-out infinite;
 }
 
 /* ===== REDUCED MOTION ===== */

@@ -1,908 +1,1747 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BonBern | The Psychological Protagonist</title>
-<meta name="description" content="BonBern Think Tank Labs — behavior-first consultancy blending psychology with creativity and technology. We shape perception, influence culture, and solve real-world problems."/>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BonBern | The Psychological Protagonist</title>
+    <meta
+      name="description"
+      content="BonBern Think Tank Labs — behavior-first consultancy blending psychology with creativity and technology. We shape perception, influence culture, and solve real-world problems."
+    />
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="images/logo.svg"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/bubble_500.png" />
 
-<!-- Fonts: Instrument Serif + Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Fonts: Instrument Serif + Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- Design System -->
-<link rel="stylesheet" href="style.css"/>
+    <!-- FontAwesome Icons -->
+    <script src="fonts/fontawesome-free-7.3.1-web/js/all.min.js"></script>
 
-<!-- GSAP & ScrollTrigger -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Design System -->
+    <link rel="stylesheet" href="style.css" />
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
         theme: {
-            extend: {
-                colors: {
-                    "cream": "#FFFFFF",
-                    "cream-light": "#FFFFFF",
-                    "cream-muted": "#F0F0F0",
-                    "cream-muted-hover": "#E5E5E5",
-                    "espresso": "#111111",
-                    "espresso-hover": "#000000",
-                    "surface": "#0a0a0a",
-                    "surface-dim": "#050505",
-                    "surface-container": "#111111",
-                    "surface-container-high": "#1a1a1a",
-                    "on-surface": "#f0f0f0",
-                    "on-surface-variant": "#8a8a8a",
-                    "background": "#050505",
-                    "primary": "#e23028",
-                    "on-primary": "#ffffff",
-                },
-                fontFamily: {
-                    "title": ["'Avenir Next'", "system-ui", "-apple-system", "sans-serif"],
-                    "subtitle": ["'Unageo'", "system-ui", "-apple-system", "sans-serif"],
-                    "body": ["'Louis George Cafe'", "system-ui", "-apple-system", "sans-serif"],
-                    "serif": ["'Instrument Serif'", "Georgia", "serif"],
-                },
-                borderRadius: {
-                    "DEFAULT": "0rem",
-                    "lg": "0.75rem",
-                    "xl": "1.25rem",
-                    "2xl": "2rem",
-                    "3xl": "2.5rem",
-                    "4xl": "3rem",
-                    "full": "9999px"
-                },
-                keyframes: {
-                    "fade-in-down": {
-                        "0%": { opacity: "0", transform: "translateY(-8px)" },
-                        "100%": { opacity: "1", transform: "translateY(0)" },
-                    }
-                },
-                animation: {
-                    "fade-in-down": "fade-in-down 0.2s ease-out",
-                }
+          extend: {
+            colors: {
+              cream: "#FFFFFF",
+              "cream-light": "#FFFFFF",
+              "cream-muted": "#F0F0F0",
+              "cream-muted-hover": "#E5E5E5",
+              espresso: "#111111",
+              "espresso-hover": "#000000",
+              surface: "#0a0a0a",
+              "surface-dim": "#050505",
+              "surface-container": "#111111",
+              "surface-container-high": "#1a1a1a",
+              "on-surface": "#f0f0f0",
+              "on-surface-variant": "#8a8a8a",
+              background: "#050505",
+              primary: "#e23028",
+              "on-primary": "#ffffff",
             },
+            fontFamily: {
+              title: [
+                "'Avenir Next'",
+                "system-ui",
+                "-apple-system",
+                "sans-serif",
+              ],
+              subtitle: [
+                "'Unageo'",
+                "system-ui",
+                "-apple-system",
+                "sans-serif",
+              ],
+              body: [
+                "'Louis George Cafe'",
+                "system-ui",
+                "-apple-system",
+                "sans-serif",
+              ],
+              serif: ["'Instrument Serif'", "Georgia", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0rem",
+              lg: "0.75rem",
+              xl: "1.25rem",
+              "2xl": "2rem",
+              "3xl": "2.5rem",
+              "4xl": "3rem",
+              full: "9999px",
+            },
+            keyframes: {
+              "fade-in-down": {
+                "0%": { opacity: "0", transform: "translateY(-8px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              "fade-in-down": "fade-in-down 0.2s ease-out",
+            },
+          },
         },
-    }
-</script>
-</head>
-<body class="font-body overflow-hidden">
-
-<!-- ==================== PRELOADER ==================== -->
-<div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-[#020202]">
-    <div class="relative flex flex-col items-center">
-        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 overflow-hidden">
-            <span id="preloader-prefix" class="text-xl md:text-2xl uppercase tracking-[0.3em] text-[#f5f5f5]/30 font-light transition-all duration-[800ms] translate-y-8 opacity-0">
-                BonBern for
+      };
+    </script>
+  </head>
+  <body class="font-body overflow-hidden">
+    <!-- ==================== PRELOADER ==================== -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-[#020202]"
+    >
+      <div class="relative flex flex-col items-center">
+        <div
+          class="flex flex-col md:flex-row items-center gap-2 md:gap-4 overflow-hidden"
+        >
+          <span
+            id="preloader-prefix"
+            class="text-xl md:text-2xl uppercase tracking-[0.3em] text-[#f5f5f5]/30 font-light transition-all duration-[800ms] translate-y-8 opacity-0"
+          >
+            BonBern for
+          </span>
+          <div
+            class="relative h-12 md:h-16 flex items-center min-w-[200px] md:min-w-[300px] justify-center md:justify-start"
+          >
+            <span
+              id="preloader-role"
+              class="absolute text-3xl md:text-5xl font-semibold text-[#f5f5f5] uppercase tracking-tighter opacity-0"
+            >
             </span>
-            <div class="relative h-12 md:h-16 flex items-center min-w-[200px] md:min-w-[300px] justify-center md:justify-start">
-                <span id="preloader-role" class="absolute text-3xl md:text-5xl font-semibold text-[#f5f5f5] uppercase tracking-tighter opacity-0">
-                </span>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- ==================== FLOATING PILL NAVBAR ==================== -->
-<nav id="main-nav" class="absolute top-6 left-1/2 -translate-x-1/2 z-50">
-    <!-- Pill -->
-    <div class="navbar-pill flex items-center gap-4 px-5 py-2.5">
-        <a href="#" class="text-lg font-semibold tracking-tight text-black select-none">BonBern.</a>
-        <button id="hamburger-btn" class="flex flex-col gap-[5px] items-center justify-center w-8 h-8 cursor-pointer" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+    <!-- ==================== FLOATING PILL NAVBAR ==================== -->
+    <nav id="main-nav" class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+      <!-- Pill -->
+      <div class="navbar-pill flex items-center gap-4 px-5 py-2.5">
+        <a
+          href="#"
+          class="navbar-brand text-lg tracking-tight text-black select-none"
+          >BonBern.</a
+        >
+        <button
+          id="hamburger-btn"
+          class="flex flex-col gap-[5px] items-center justify-center w-8 h-8 cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
-    </div>
+      </div>
 
-    <!-- Dropdown -->
-    <div id="nav-dropdown" class="navbar-dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-4 min-w-[200px]">
-        <a href="#about-section" class="block px-4 py-3 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors">Services</a>
-        <a href="#features-section" class="block px-4 py-3 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors">Think Tank</a>
-        <a href="#partnerships" class="block px-4 py-3 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors">Partnerships</a>
-        <a href="#team" class="block px-4 py-3 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors">Team</a>
-        <a href="#cta-section" class="block px-4 py-3 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors">Contact</a>
-    </div>
-</nav>
+      <!-- Dropdown -->
+      <div
+        id="nav-dropdown"
+        class="navbar-dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl p-3 min-w-[210px] border border-black/5"
+      >
+        <a
+          href="#about-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-compass text-primary/80 text-xs w-4"></i> About
+          Us
+        </a>
+        <a
+          href="#features-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-cube text-primary/80 text-xs w-4"></i> Services
+        </a>
+        <a
+          href="#process-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-timeline text-primary/80 text-xs w-4"></i> Our
+          Process
+        </a>
+        <a
+          href="#partnerships"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-handshake text-primary/80 text-xs w-4"></i>
+          Partnerships
+        </a>
+        <a
+          href="#team"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-user-tie text-primary/80 text-xs w-4"></i>
+          Founder
+        </a>
+        <a
+          href="#cta-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-paper-plane text-primary/80 text-xs w-4"></i>
+          Contact
+        </a>
+      </div>
+    </nav>
 
-<!-- ==================== SECTION 1: HERO ==================== -->
-<section id="hero" class="relative w-full h-screen overflow-hidden mb-[-25px]">
-    <!-- Background Video -->
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0" data-parallax data-speed="0.3">
+    <!-- ==================== SECTION 1: HERO ==================== -->
+    <section
+      id="hero"
+      class="relative w-full h-screen overflow-hidden mb-[-25px]"
+    >
+      <!-- Background Video -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        data-parallax
+        data-speed="0.3"
+      >
         <source src="images/Enhanced Clipify Eye TV.mp4" type="video/mp4" />
-    </video>
+      </video>
 
-    <!-- Semi-transparent Overlay -->
-    <div class="absolute inset-0 bg-black/20 z-[1]"></div>
+      <!-- Semi-transparent Overlay -->
+      <div class="absolute inset-0 bg-black/20 z-[1]"></div>
 
-    <!-- Hero Content -->
-    <div id="hero-content" class="relative z-10 flex flex-col justify-between h-full px-6 pt-24 pb-10 md:pb-12">
+      <!-- Hero Content -->
+      <div
+        id="hero-content"
+        class="relative z-10 flex flex-col justify-between h-full px-6 pt-24 pb-10 md:pb-12"
+      >
         <!-- Giant Center Logo in Hero -->
-        <div id="hero-logo" class="flex justify-center items-center flex-1 my-auto pt-6">
-            <img src="images/logo.svg" alt="BonBern Logo" class="h-24 sm:h-36 md:h-48 lg:h-56 w-auto max-w-[340px] sm:max-w-[560px] md:max-w-[760px] lg:max-w-[900px] filter drop-shadow-[0_8px_32px_rgba(0,0,0,0.75)]" />
+        <div
+          id="hero-logo"
+          class="flex justify-center items-center flex-1 my-auto pt-6"
+        >
+          <img
+            src="images/logo.svg"
+            alt="BonBern Logo"
+            class="h-24 sm:h-36 md:h-48 lg:h-56 w-auto max-w-[340px] sm:max-w-[560px] md:max-w-[760px] lg:max-w-[900px] filter drop-shadow-[0_8px_32px_rgba(0,0,0,0.75)]"
+          />
         </div>
 
         <!-- Text Content & CTA Bar (Positioned Lower) -->
         <div class="text-center mx-auto max-w-4xl mt-auto">
-            <h1 id="hero-heading" class="hero-heading mb-4 md:mb-5">
-                <span id="hero-line-1" class="block sm:inline">Shape perception </span>
-                <span id="hero-line-2" class="block sm:inline">without <em class="not-italic hero-serif-accent">the noise</em></span>
-            </h1>
-            <p id="hero-subtitle" class="text-white/85 text-xs sm:text-sm md:text-base font-medium max-w-[460px] mx-auto mb-6 md:mb-8">
-                BonBern is a behavior-first think tank that turns scattered narratives into cultural influence
-            </p>
+          <h1 id="hero-heading" class="hero-heading mb-4 md:mb-5">
+            <span id="hero-line-1" class="block sm:inline"
+              >Shape perception
+            </span>
+            <span id="hero-line-2" class="block sm:inline"
+              >without
+              <em class="not-italic hero-serif-accent">the noise</em></span
+            >
+          </h1>
+          <p
+            id="hero-subtitle"
+            class="text-white/85 text-xs sm:text-sm md:text-base font-medium max-w-[460px] mx-auto mb-6 md:mb-8"
+          >
+            BonBern is a behavior-first think tank that turns scattered
+            narratives into cultural influence
+          </p>
 
-            <!-- CTA Bar -->
-            <div id="hero-cta" class="hero-cta-bar flex flex-row items-center pl-6 pr-1 py-1 gap-4 mx-auto w-fit">
-                <span class="text-white text-xs sm:text-sm font-medium hidden sm:block">No gimmicks. No empty promises. Just strategic clarity.</span>
-                <span class="text-white text-xs sm:text-sm font-medium sm:hidden">Strategic clarity, delivered.</span>
-                <a href="mailto:hello@bonbern.com" class="btn-primary flex-shrink-0">Start a conversation</a>
-            </div>
+          <!-- CTA Bar -->
+          <div
+            id="hero-cta"
+            class="hero-cta-bar flex flex-row items-center pl-6 pr-1 py-1 gap-4 mx-auto w-fit"
+          >
+            <span
+              class="text-white text-xs sm:text-sm font-medium hidden sm:block"
+              >No gimmicks. No empty promises. Just strategic clarity.</span
+            >
+            <span class="text-white text-xs sm:text-sm font-medium sm:hidden"
+              >Strategic clarity, delivered.</span
+            >
+            <a href="mailto:hello@bonbern.com" class="btn-primary flex-shrink-0"
+              >Start a conversation</a
+            >
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ==================== SECTION 2: ABOUT ==================== -->
-<section id="about-section" class="about-section rounded-t-[25px] relative z-10 py-20 md:py-32 px-6">
-    <!-- Top Area -->
-    <div class="max-w-3xl mx-auto text-center mb-12">
-        <p class="text-[#111111] text-base md:text-lg leading-relaxed max-w-lg mx-auto mb-8 gsap-fade-up">
-            We craft mental environments that move with human behavior, not over it. Designed for influence, presence, and lasting impact.
+    <!-- ==================== SECTION 2: ABOUT US ==================== -->
+    <section
+      id="about-section"
+      class="about-section rounded-t-[25px] relative z-10 py-20 md:py-32 px-6"
+    >
+      <!-- Top Area -->
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <span
+          class="px-4 py-1.5 rounded-full bg-[#111111]/5 border border-[#111111]/10 text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-6 inline-block gsap-fade-up"
+        >
+          Perception Building Lab
+        </span>
+        <h2
+          class="text-3xl md:text-5xl font-bold tracking-tight text-[#111111] mb-6 gsap-fade-up"
+        >
+          We’re a Think Tank — built for celebrities, brands, and change-makers.
+        </h2>
+        <p
+          class="text-[#111111]/80 text-base md:text-xl leading-relaxed max-w-2xl mx-auto mb-8 gsap-fade-up font-medium"
+        >
+          BonBern Think Tank Studio is a behavior-first consultancy. We believe
+          the world doesn’t move on logic — it moves on emotions, stories, and
+          belief. So we go beyond marketing — into minds, memories, and meaning.
         </p>
         <div class="flex flex-wrap justify-center gap-4 gsap-fade-up">
-            <a href="mailto:hello@bonbern.com" class="about-btn-dark">
-                <span class="btn-icon"><span class="material-symbols-outlined text-sm">mail</span></span>
-                Say hello
-            </a>
-            <a href="#cta-section" class="about-btn-muted">
-                <span class="btn-icon"><span class="material-symbols-outlined text-sm">add</span></span>
-                Stay informed
-            </a>
+          <a href="mailto:hello@bonbern.com" class="about-btn-dark">
+            <span class="btn-icon"
+              ><i class="fa-solid fa-paper-plane text-xs"></i
+            ></span>
+            Say hello
+          </a>
+          <a href="#process-section" class="about-btn-muted">
+            <span class="btn-icon"
+              ><i class="fa-solid fa-arrow-down text-xs"></i
+            ></span>
+            Explore Our Process
+          </a>
         </div>
-    </div>
+      </div>
 
-    <!-- Decorative Divider -->
-    <div class="about-divider max-w-6xl mx-auto">
+      <!-- Decorative Divider -->
+      <div class="about-divider max-w-6xl mx-auto">
         <div class="about-divider-dot"></div>
         <div class="about-divider-line"></div>
         <div class="about-divider-dot"></div>
-    </div>
+      </div>
 
-    <!-- Bottom Area -->
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 md:gap-24">
-        <!-- Left: Logo + Label -->
-        <div class="flex-shrink-0 flex flex-col items-start gap-4 gsap-fade-up">
-            <!-- BonBern Mark SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="none" class="bonbern-mark">
-                <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="#111111" />
+      <!-- Bottom Area: Manifesto & Secret Box -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+      >
+        <!-- Left: Logo + Label + Secret Box -->
+        <div class="lg:col-span-4 flex flex-col items-start gap-6 gsap-fade-up">
+          <div class="flex items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 256 256"
+              fill="none"
+              class="bonbern-mark"
+            >
+              <path
+                d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"
+                fill="#111111"
+              />
             </svg>
-            <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#111111]/60 leading-relaxed">
-                Perception<br/>Amplified
+            <span
+              class="text-xs uppercase tracking-[0.25em] font-semibold text-[#111111]/70 leading-relaxed"
+            >
+              Perception<br />Amplified
             </span>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-[#111111]/5 border border-[#111111]/10 text-left w-full"
+          >
+            <span
+              class="text-xs font-bold uppercase tracking-widest text-primary block mb-2"
+              ><i class="fa-solid fa-bolt mr-1"></i> Our Secret?</span
+            >
+            <p class="text-sm font-medium text-[#111111]/85 leading-relaxed">
+              A rare mix of psychological insight, creative storytelling, and
+              tech-powered execution.
+            </p>
+          </div>
         </div>
 
         <!-- Right: Big manifesto text -->
-        <div class="gsap-fade-up">
-            <p class="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] leading-[1.3] font-normal text-[#111111]">
-                We build psychological frameworks and strategic narratives. But, most importantly, we help you remember what authentic influence looks like — when strategy moves <em class="font-serif not-italic">with</em> you, not <em class="font-serif not-italic">over</em> you. We create systems that carry the cognitive weight, so you can attend to what truly counts.
-            </p>
+        <div class="lg:col-span-8 gsap-fade-up">
+          <p
+            class="text-xl sm:text-2xl md:text-3xl lg:text-[34px] leading-[1.4] font-normal text-[#111111]"
+          >
+            We blend psychology with creativity to shape perception — from
+            image-building and viral campaigns to solving real-world problems
+            that demand attention. We create systems that carry the cognitive
+            weight, so you can attend to what truly counts.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ==================== SECTION 3: SERVICES (Scroll-Driven Cards) ==================== -->
-<section id="features-section" class="relative overflow-hidden">
-    <!-- Fixed background -->
-    <div class="absolute inset-0 -z-10 bg-[#050505]">
-        <div class="absolute inset-0 opacity-30" style="background-image: url('images/Agentic_fg_251207.png'); background-size: cover; background-position: center; background-attachment: fixed;"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
-    </div>
+    <!-- ==================== SECTION 3: SERVICES (Scroll-Driven Cards) ==================== -->
+    <section id="features-section" class="relative overflow-hidden">
+      <!-- Fixed background -->
+      <div class="absolute inset-0 -z-10 bg-[#050505]">
+        <div
+          class="absolute inset-0 opacity-30"
+          style="
+            background-image: url(&quot;images/Agentic_fg_251207.png&quot;);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+          "
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"
+        ></div>
+      </div>
 
-    <div class="px-5 md:px-10 lg:px-16 py-20 md:py-40 lg:py-48">
+      <div class="px-5 md:px-10 lg:px-16 py-20 md:py-40 lg:py-48">
         <!-- Grid: left sticky + right scrolling cards -->
-        <div class="lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[460px_1fr] lg:gap-24 xl:gap-48 max-w-screen-2xl mx-auto">
+        <div
+          class="lg:grid lg:grid-cols-[400px_1fr] xl:grid-cols-[460px_1fr] lg:gap-24 xl:gap-48 max-w-screen-2xl mx-auto"
+        >
+          <!-- LEFT COLUMN (sticky on desktop) -->
+          <div
+            class="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-32 mb-16 lg:mb-0"
+          >
+            <div>
+              <h2
+                class="text-white text-2xl sm:text-3xl lg:text-[46px] leading-[1.2] font-normal mb-8 gsap-fade-up"
+              >
+                Strategy that flows with human nature, not over it
+              </h2>
 
-            <!-- LEFT COLUMN (sticky on desktop) -->
-            <div class="lg:sticky lg:top-0 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-32 mb-16 lg:mb-0">
-                <div>
-                    <h2 class="text-white text-2xl sm:text-3xl lg:text-[46px] leading-[1.2] font-normal mb-8 gsap-fade-up">
-                        Strategy that flows with human nature, not over it
-                    </h2>
-
-                    <!-- Feature nav (desktop only) -->
-                    <div id="feature-nav" class="hidden lg:flex flex-col gap-2 mt-8">
-                        <button class="feature-nav-btn active" data-target="feature-0">Perception Engineering</button>
-                        <button class="feature-nav-btn" data-target="feature-1">Behavior Decoding</button>
-                        <button class="feature-nav-btn" data-target="feature-2">Cultural Strategy</button>
-                    </div>
-                </div>
-
-                <!-- Bottom CTA (desktop only) -->
-                <div class="hidden lg:block mt-12">
-                    <p class="text-white/60 text-sm font-medium mb-4">No gimmicks. No empty promises. Just strategic clarity, delivered.</p>
-                    <a href="mailto:hello@bonbern.com" class="btn-primary inline-flex">Start a conversation</a>
-                </div>
+              <!-- Feature nav (desktop only) -->
+              <div id="feature-nav" class="hidden lg:flex flex-col gap-2 mt-8">
+                <button class="feature-nav-btn active" data-target="feature-0">
+                  Perception Engineering
+                </button>
+                <button class="feature-nav-btn" data-target="feature-1">
+                  Behavior Decoding
+                </button>
+                <button class="feature-nav-btn" data-target="feature-2">
+                  Cultural Strategy
+                </button>
+              </div>
             </div>
 
-            <!-- RIGHT COLUMN (scrolling cards) -->
-            <div class="flex flex-col gap-12 md:gap-20">
-
-                <!-- Card 1: Perception Engineering -->
-                <div id="feature-0" class="feature-card feature-card-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="none" class="bonbern-mark mb-6">
-                        <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="rgba(255,255,255,0.8)" />
-                    </svg>
-                    <h3 class="text-white text-xl md:text-2xl font-medium mb-4">Perception Engineering</h3>
-                    <div class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6">
-                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                            <source src="images/Enhanced Clipify Eye TV.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                    <p class="text-white/60 font-medium text-sm md:text-base leading-relaxed">
-                        We don't just tell stories. We construct the psychological stage where your narrative becomes inevitable. Every surface is made to be precise, intentional, and architecturally sound — so your audience moves forward, not sideways.
-                    </p>
-                </div>
-
-                <!-- Card 2: Behavior Decoding -->
-                <div id="feature-1" class="feature-card feature-card-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="none" class="bonbern-mark mb-6">
-                        <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="rgba(255,255,255,0.8)" />
-                    </svg>
-                    <h3 class="text-white text-xl md:text-2xl font-medium mb-4">Behavior Decoding</h3>
-                    <div class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6">
-                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                            <source src="images/clipfly charlie.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                    <p class="text-white/60 font-medium text-sm md:text-base leading-relaxed">
-                        Before a single pixel is placed, we identify the psychological levers that drive decision-making. Beginning with the deepest signals — Behavior Decoding eases you into motion with subtle cues and a quiet view of what deserves your energy right now.
-                    </p>
-                </div>
-
-                <!-- Card 3: Cultural Strategy -->
-                <div id="feature-2" class="feature-card feature-card-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" fill="none" class="bonbern-mark mb-6">
-                        <path d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z" fill="rgba(255,255,255,0.8)" />
-                    </svg>
-                    <h3 class="text-white text-xl md:text-2xl font-medium mb-4">Cultural Strategy</h3>
-                    <div class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6">
-                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                            <source src="images/paps female model.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                    <p class="text-white/60 font-medium text-sm md:text-base leading-relaxed">
-                        We provide the lighting, the shadows, and the script that turns a passive viewer into an active participant. No interruptions, no clutter — a stripped-back approach that softens all else until your audience is truly ready to shift.
-                    </p>
-                </div>
-
+            <!-- Bottom CTA (desktop only) -->
+            <div class="hidden lg:block mt-12">
+              <p class="text-white/60 text-sm font-medium mb-4">
+                No gimmicks. No empty promises. Just strategic clarity,
+                delivered.
+              </p>
+              <a href="mailto:hello@bonbern.com" class="btn-primary inline-flex"
+                >Start a conversation</a
+              >
             </div>
-        </div>
-    </div>
-</section>
+          </div>
 
-<!-- ==================== SECTION 4: WHO WE WORK WITH ==================== -->
-<section id="partnerships" class="py-32 bg-[#050505] overflow-hidden">
-  <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
-    <div class="mb-20">
-      <p class="section-label mb-4 gsap-fade-up">Partnerships</p>
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white gsap-fade-up">Who We Work With</h2>
-    </div>
-    <div class="work-container flex flex-col md:flex-row gap-6 min-h-[500px] w-full items-stretch">
-      <!-- Artists Card -->
-      <div class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up">
-        <div class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"></div>
-        <div class="absolute inset-0 z-0">
-          <img alt="Artist representation" class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida/ADBb0ugVxCZqeguWw0V0vc_6M0Whg4WC453SljXbeBFJ0DSfOUexv0mT-IiE5Jx0Ez6wMuD_igy_3LI4cU1P49Xci07_AJlEoZ-47Z0KaKXcKjHNaTl6P9Q3GYBhN7vwKyGyczQchep-h5w7rCF8A82QsaX89LDIpMxI6bcNQvjtEXU87mlYppThl7W5p6GJHXYBMr8NjP_BewSch274LZkdDlQdULsrKscvm2kbMIFOvgFrUiG8RPFU1ZOhIlrVRXPTgjK54IS5uQaJmg"/>
-        </div>
-        <div class="relative z-10 flex h-full">
-          <div class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold">#ARTISTS</div>
-          <div class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100">
-            <ul class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight">
-              <li>Baadshah</li>
-              <li>Jasleen Royal</li>
-              <li>Sunidhi</li>
-              <li>Divine</li>
-            </ul>
+          <!-- RIGHT COLUMN (scrolling cards) -->
+          <div class="flex flex-col gap-12 md:gap-20">
+            <!-- Card 1: Perception Engineering -->
+            <div id="feature-0" class="feature-card feature-card-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 256 256"
+                fill="none"
+                class="bonbern-mark mb-6"
+              >
+                <path
+                  d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"
+                  fill="rgba(255,255,255,0.8)"
+                />
+              </svg>
+              <h3 class="text-white text-xl md:text-2xl font-medium mb-4">
+                Perception Engineering
+              </h3>
+              <div
+                class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6"
+              >
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                >
+                  <source
+                    src="images/Enhanced Clipify Eye TV.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <p
+                class="text-white/60 font-medium text-sm md:text-base leading-relaxed"
+              >
+                We don't just tell stories. We construct the psychological stage
+                where your narrative becomes inevitable. Every surface is made
+                to be precise, intentional, and architecturally sound — so your
+                audience moves forward, not sideways.
+              </p>
+            </div>
+
+            <!-- Card 2: Behavior Decoding -->
+            <div id="feature-1" class="feature-card feature-card-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 256 256"
+                fill="none"
+                class="bonbern-mark mb-6"
+              >
+                <path
+                  d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"
+                  fill="rgba(255,255,255,0.8)"
+                />
+              </svg>
+              <h3 class="text-white text-xl md:text-2xl font-medium mb-4">
+                Behavior Decoding
+              </h3>
+              <div
+                class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6"
+              >
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                >
+                  <source src="images/clipfly charlie.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <p
+                class="text-white/60 font-medium text-sm md:text-base leading-relaxed"
+              >
+                Before a single pixel is placed, we identify the psychological
+                levers that drive decision-making. Beginning with the deepest
+                signals — Behavior Decoding eases you into motion with subtle
+                cues and a quiet view of what deserves your energy right now.
+              </p>
+            </div>
+
+            <!-- Card 3: Cultural Strategy -->
+            <div id="feature-2" class="feature-card feature-card-hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 256 256"
+                fill="none"
+                class="bonbern-mark mb-6"
+              >
+                <path
+                  d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"
+                  fill="rgba(255,255,255,0.8)"
+                />
+              </svg>
+              <h3 class="text-white text-xl md:text-2xl font-medium mb-4">
+                Cultural Strategy
+              </h3>
+              <div
+                class="aspect-video rounded-2xl overflow-hidden bg-black/30 mb-6"
+              >
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                >
+                  <source src="images/paps female model.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <p
+                class="text-white/60 font-medium text-sm md:text-base leading-relaxed"
+              >
+                We provide the lighting, the shadows, and the script that turns
+                a passive viewer into an active participant. No interruptions,
+                no clutter — a stripped-back approach that softens all else
+                until your audience is truly ready to shift.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Labels Card -->
-      <div class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up">
-        <div class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-primary/60 via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"></div>
-        <div class="absolute inset-0 z-0">
-          <img alt="Label representation" class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida/ADBb0uh19crxJpoh70Mg3QHj-HIYwnbqFGtmBjYjoDdgiA6ZLu-IkftB4AeoBP632PKK0B5pQxxko7SWWC2gy1-MyTyBni0jWWnFZWeRAxjo4asc2I57YWKH7AwmCmMTZcrHD5W3uQzO1A61AIGm0tyimaBnAVAIIWAukRx68xRn_mXB2a0eu1i_ef6vN1LnCnPB9rEAAeRiQ5FwcDe4ZXxt2kgHWlJTwbLuS8R5YH_UhNSeuPDv4GSaSYklFVMNUiWgrHPptJHhLxIX"/>
-        </div>
-        <div class="relative z-10 flex h-full">
-          <div class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold">#LABELS</div>
-          <div class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100">
-            <ul class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight">
-              <li>Universal Music</li>
-              <li>Sony Music</li>
-              <li>Warner Music</li>
-              <li>T-Series</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Brands Card -->
-      <div class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up">
-        <div class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-red-950/80 via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"></div>
-        <div class="absolute inset-0 z-0">
-          <img alt="Brand representation" class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZOPNPAUwxBXApXPAbxwJv8ZLNNpeFqN5hTvKMD3rS7O14hyQGfLK6fk5pMY034H4IJ2xik7J_biotLuNl6BRBd9UfcIOOcq-kqcdICIFKYQlV_GoaxE1SE-YxynGtSUW4FdFPXgzcxlbpEYo_bAUgYHDbwrjFZ6bmmbM86IZCQrjDGkAha7EZTFd91BqXeze5useDyTnSzeWZu4NYQUkyQR80G5c53GAx0yixkFU6AfukVtcn0HR6BU-GO3W4CLQpWC5B-AhXlEI"/>
-        </div>
-        <div class="relative z-10 flex h-full">
-          <div class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold">#BRANDS</div>
-          <div class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100">
-            <ul class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight">
-              <li>Nike</li>
-              <li>Red Bull</li>
-              <li>Marvel</li>
-              <li>Apple</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ==================== SECTION 5: DREAM TEAM ==================== -->
-<section class="py-32 relative overflow-hidden bg-[#050505]" id="team">
-    <!-- Background glow -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cream/5 rounded-full blur-[150px] -z-10"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cream/3 rounded-full blur-[150px] -z-10"></div>
+    <!-- ==================== SECTION 3.5: OUR PROCESS ==================== -->
+    <section
+      id="process-section"
+      class="py-28 md:py-36 bg-[#050505] relative overflow-hidden"
+    >
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-16">
+        <div class="mb-16 md:mb-24 max-w-3xl">
+          <span class="section-label mb-3 inline-block gsap-fade-up"
+            >Methodology</span
+          >
+          <h2
+            class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 gsap-fade-up"
+          >
+            Our Process
+          </h2>
+          <p
+            class="text-white/65 text-base md:text-lg font-medium leading-relaxed gsap-fade-up"
+          >
+            Whether we’re building celebrity personas, launching brand
+            movements, or solving public challenges — here’s how we work:
+          </p>
+        </div>
 
-    <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
-        <div class="mb-20 text-center md:text-left">
-            <h2 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-6 gsap-fade-up">
-                Meet the <span class="text-gradient">Dream Team</span>
-            </h2>
-            <p class="max-w-2xl text-lg text-white/50 font-normal leading-relaxed gsap-fade-up">
-                A collective of behavioral scientists, creative strategists, and technical architects working at the intersection of psychology and culture.
+        <!-- 6 Step Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
+          <!-- Step 1 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">01</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">
+              Understand the Brief
+            </h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              We decode what’s said, what’s unsaid, and why it matters. This is
+              where the foundation of perception begins.
             </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">02</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-brain"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">Decode Behavior</h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              We dive deep into psychology, audience patterns, and cultural
+              signals — so that what we create is not just creative, but
+              correctly wired.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">03</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-feather-pointed"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">
+              Design the Narrative
+            </h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              Every message is engineered to not just be seen, but felt and
+              remembered.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">04</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">
+              Develop Communication Assets
+            </h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              From content to campaigns, we build assets that are platform-fit —
+              digital, physical, or phygital. We don’t just follow trends. We
+              often start them.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">05</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-tower-broadcast"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">Adapt & Amplify</h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              We observe how the world reacts, learn from signals, and evolve
+              the message accordingly.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="process-card gsap-fade-up">
+            <div class="flex items-center justify-between mb-6">
+              <span class="process-num">06</span>
+              <div
+                class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary"
+              >
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+            </div>
+            <h3 class="text-white text-xl font-bold mb-3">
+              Reflect & Reinvent
+            </h3>
+            <p class="text-white/60 text-sm font-medium leading-relaxed">
+              We circle back, learn what shifted perception, and explore new
+              opportunities. What we build today should make tomorrow smarter.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: WHO WE WORK WITH ==================== -->
+    <section id="partnerships" class="py-32 bg-[#050505] overflow-hidden">
+      <div class="max-w-screen-2xl mx-auto px-8 md:px-24">
+        <div class="mb-20">
+          <p class="section-label mb-4 gsap-fade-up">Partnerships</p>
+          <h2
+            class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white gsap-fade-up"
+          >
+            Who We Work With
+          </h2>
+        </div>
+        <div
+          class="work-container flex flex-col md:flex-row gap-6 min-h-[500px] w-full items-stretch"
+        >
+          <!-- Artists Card -->
+          <div
+            class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up"
+          >
+            <div
+              class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"
+            ></div>
+            <div class="absolute inset-0 z-0">
+              <img
+                alt="Artist representation"
+                class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0"
+                src="https://lh3.googleusercontent.com/aida/ADBb0ugVxCZqeguWw0V0vc_6M0Whg4WC453SljXbeBFJ0DSfOUexv0mT-IiE5Jx0Ez6wMuD_igy_3LI4cU1P49Xci07_AJlEoZ-47Z0KaKXcKjHNaTl6P9Q3GYBhN7vwKyGyczQchep-h5w7rCF8A82QsaX89LDIpMxI6bcNQvjtEXU87mlYppThl7W5p6GJHXYBMr8NjP_BewSch274LZkdDlQdULsrKscvm2kbMIFOvgFrUiG8RPFU1ZOhIlrVRXPTgjK54IS5uQaJmg"
+              />
+            </div>
+            <div class="relative z-10 flex h-full">
+              <div
+                class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold"
+              >
+                #ARTISTS
+              </div>
+              <div
+                class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100"
+              >
+                <ul
+                  class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight"
+                >
+                  <li>Baadshah</li>
+                  <li>Jasleen Royal</li>
+                  <li>Sunidhi</li>
+                  <li>Divine</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Labels Card -->
+          <div
+            class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up"
+          >
+            <div
+              class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-primary/60 via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"
+            ></div>
+            <div class="absolute inset-0 z-0">
+              <img
+                alt="Label representation"
+                class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0"
+                src="https://lh3.googleusercontent.com/aida/ADBb0uh19crxJpoh70Mg3QHj-HIYwnbqFGtmBjYjoDdgiA6ZLu-IkftB4AeoBP632PKK0B5pQxxko7SWWC2gy1-MyTyBni0jWWnFZWeRAxjo4asc2I57YWKH7AwmCmMTZcrHD5W3uQzO1A61AIGm0tyimaBnAVAIIWAukRx68xRn_mXB2a0eu1i_ef6vN1LnCnPB9rEAAeRiQ5FwcDe4ZXxt2kgHWlJTwbLuS8R5YH_UhNSeuPDv4GSaSYklFVMNUiWgrHPptJHhLxIX"
+              />
+            </div>
+            <div class="relative z-10 flex h-full">
+              <div
+                class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold"
+              >
+                #LABELS
+              </div>
+              <div
+                class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100"
+              >
+                <ul
+                  class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight"
+                >
+                  <li>Universal Music</li>
+                  <li>Sony Music</li>
+                  <li>Warner Music</li>
+                  <li>T-Series</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Brands Card -->
+          <div
+            class="work-card relative rounded-2xl overflow-hidden group/card flex flex-col justify-end p-8 md:p-12 cursor-pointer gsap-fade-up"
+          >
+            <div
+              class="card-bg-gradient absolute inset-0 bg-gradient-to-t from-red-950/80 via-black/40 to-transparent opacity-0 transition-opacity duration-500 z-[1]"
+            ></div>
+            <div class="absolute inset-0 z-0">
+              <img
+                alt="Brand representation"
+                class="card-image w-full h-full object-cover brightness-75 transition-transform duration-700 ease-out grayscale hover:grayscale-0"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZOPNPAUwxBXApXPAbxwJv8ZLNNpeFqN5hTvKMD3rS7O14hyQGfLK6fk5pMY034H4IJ2xik7J_biotLuNl6BRBd9UfcIOOcq-kqcdICIFKYQlV_GoaxE1SE-YxynGtSUW4FdFPXgzcxlbpEYo_bAUgYHDbwrjFZ6bmmbM86IZCQrjDGkAha7EZTFd91BqXeze5useDyTnSzeWZu4NYQUkyQR80G5c53GAx0yixkFU6AfukVtcn0HR6BU-GO3W4CLQpWC5B-AhXlEI"
+              />
+            </div>
+            <div class="relative z-10 flex h-full">
+              <div
+                class="vertical-label text-4xl md:text-5xl text-neutral-900/30 uppercase tracking-tighter self-start pt-4 font-semibold"
+              >
+                #BRANDS
+              </div>
+              <div
+                class="card-content flex flex-col justify-end ml-auto text-right transition-all duration-500 transform translate-y-4 opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100"
+              >
+                <ul
+                  class="space-y-2 text-white text-2xl font-semibold uppercase tracking-tight"
+                >
+                  <li>Nike</li>
+                  <li>Red Bull</li>
+                  <li>Marvel</li>
+                  <li>Apple</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: FOUNDER & CEO ==================== -->
+    <section class="py-32 relative overflow-hidden bg-[#050505]" id="team">
+      <!-- Background glow -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px] -z-10"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[160px] -z-10"
+      ></div>
+
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-16">
+        <div class="mb-16">
+          <span class="section-label mb-3 inline-block gsap-fade-up"
+            >Leadership</span
+          >
+          <h2
+            class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 gsap-fade-up"
+          >
+            Founder <span class="text-gradient">&amp; Vision</span>
+          </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Aakashraj -->
-            <div class="team-card group gsap-fade-up">
-                <div class="team-card-inner glass-card p-6 rounded-[2.5rem] relative overflow-hidden h-full flex flex-col items-center text-center">
-                    <div class="relative w-32 h-32 mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute -inset-4 rounded-full bg-cream/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative w-full h-full rounded-full border border-white/8 p-1 bg-white/5 overflow-hidden">
-                            <img src="akashraj_image.jpg" alt="Aakashraj Kusum Ambre" class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700">
-                        </div>
-                    </div>
-                    
-                    <h3 class="font-semibold text-2xl tracking-tight text-white mb-2">Aakashraj Kusum Ambre</h3>
-                    <span class="px-4 py-1 rounded-full bg-white/5 border border-white/8 text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Founder & Lead Strategist</span>
-                    <p class="text-sm text-white/50 font-normal mb-8 px-4 leading-relaxed">Visionary driving behavioral shift across global markets.</p>
-                    
-                    <div class="mt-auto flex gap-4">
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">alternate_email</span>
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">link</span>
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">share</span>
-                    </div>
+        <div
+          class="glass-card p-8 md:p-14 rounded-[2.5rem] relative overflow-hidden border border-white/12 gsap-fade-up"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-center"
+          >
+            <!-- Photo Column -->
+            <div class="lg:col-span-4 flex flex-col items-center text-center">
+              <div class="relative w-48 h-48 md:w-56 md:h-56 mb-6">
+                <div
+                  class="absolute -inset-4 rounded-full bg-primary/20 blur-2xl"
+                ></div>
+                <div
+                  class="relative w-full h-full rounded-full border-2 border-white/15 p-1.5 bg-white/5 overflow-hidden shadow-2xl"
+                >
+                  <img
+                    src="akashraj_image.jpg"
+                    alt="Aakashraj Kusum Ambre"
+                    class="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
+                  />
                 </div>
+              </div>
+              <h3
+                class="font-bold text-2xl md:text-3xl tracking-tight text-white mb-2"
+              >
+                Aakashraj Kusum Ambre
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span
+                  class="px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-[11px] uppercase tracking-[0.15em] text-primary font-semibold"
+                  >Founder &amp; CEO</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium"
+                  >Behavioural Strategist</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] uppercase tracking-[0.15em] text-white/70 font-medium"
+                  >Celebrity Consultant</span
+                >
+              </div>
+
+              <!-- Social Media Links -->
+              <div class="flex items-center gap-3">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-icon-btn"
+                  aria-label="Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-icon-btn"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="social-icon-btn"
+                  aria-label="Twitter"
+                >
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a
+                  href="mailto:hello@bonbern.com"
+                  class="social-icon-btn"
+                  aria-label="Email"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
             </div>
 
-            <!-- Alina Vora -->
-            <div class="team-card group gsap-fade-up">
-                <div class="team-card-inner glass-card p-6 rounded-[2.5rem] relative overflow-hidden h-full flex flex-col items-center text-center">
-                    <div class="relative w-32 h-32 mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute -inset-4 rounded-full bg-white/8 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative w-full h-full rounded-full border border-white/8 p-1 bg-white/5 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" alt="Strategy lead" class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700">
-                        </div>
-                    </div>
-                    
-                    <h3 class="font-semibold text-2xl tracking-tight text-white mb-2">Alina Vora</h3>
-                    <span class="px-4 py-1 rounded-full bg-white/5 border border-white/8 text-[10px] uppercase tracking-[0.2em] text-white/50 mb-4">Head of Operations</span>
-                    <p class="text-sm text-white/50 font-normal mb-8 px-4 leading-relaxed">Architecting seamless workflows for high-impact campaigns.</p>
-                    
-                    <div class="mt-auto flex gap-4">
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">alternate_email</span>
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">link</span>
-                    </div>
-                </div>
+            <!-- Bio Column -->
+            <div
+              class="lg:col-span-8 space-y-6 text-white/80 text-base md:text-lg leading-relaxed"
+            >
+              <p
+                class="text-white text-xl md:text-2xl font-medium leading-snug"
+              >
+                "BonBern is built to help individuals and brands shape how they
+                are seen, heard, and remembered."
+              </p>
+              <p>
+                Aakashraj blends over a decade of experience in advertising,
+                celebrity marketing, and psychology-driven strategy. BonBern is
+                his brainchild — born out of a desire to move beyond traditional
+                marketing into deeper behavioral engineering.
+              </p>
+              <p>
+                From crafting iconic public personas to launching
+                culture-shifting campaigns, his approach combines behavioural
+                science, creative storytelling, and a deep understanding of
+                Indian culture, media, and tech.
+              </p>
             </div>
-
-            <!-- Rory Kent -->
-            <div class="team-card group gsap-fade-up">
-                <div class="team-card-inner glass-card p-6 rounded-[2.5rem] relative overflow-hidden h-full flex flex-col items-center text-center">
-                    <div class="relative w-32 h-32 mb-8 group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute -inset-4 rounded-full bg-white/8 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative w-full h-full rounded-full border border-white/8 p-1 bg-white/5 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop" alt="Design lead" class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700">
-                        </div>
-                    </div>
-                    
-                    <h3 class="font-semibold text-2xl tracking-tight text-white mb-2">Rory Kent</h3>
-                    <span class="px-4 py-1 rounded-full bg-white/5 border border-white/8 text-[10px] uppercase tracking-[0.2em] text-white/50 mb-4">Design Lead</span>
-                    <p class="text-sm text-white/50 font-normal mb-8 px-4 leading-relaxed">Defining the visual grammar of the protagonist's narrative.</p>
-                    
-                    <div class="mt-auto flex gap-4">
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">alternate_email</span>
-                        <span class="material-symbols-outlined text-lg text-white/30 hover:text-white transition-colors cursor-pointer">share</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Join Us -->
-            <div class="team-card group gsap-fade-up">
-                <div class="team-card-inner glass-card p-6 rounded-[2.5rem] relative overflow-hidden h-full flex flex-col items-center justify-center text-center border-dashed border-white/15 hover:border-solid hover:bg-primary/5 transition-all">
-                    <div class="w-20 h-20 rounded-full bg-white/5 border border-white/8 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-                        <span class="material-symbols-outlined text-3xl text-white group-hover:scale-125 transition-transform">add</span>
-                    </div>
-                    <h3 class="font-semibold text-xl tracking-tight text-white mb-2">Join the Collective</h3>
-                    <p class="text-xs text-white/50 font-normal mb-6">Always looking for visionaries.</p>
-                    <a href="#" class="text-[10px] uppercase tracking-widest text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all">View Positions</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ==================== SECTION 6: FINAL CTA ==================== -->
-<section id="cta-section" class="relative overflow-hidden">
-  <div class="bg-primary py-32 md:py-48 px-8">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] text-white uppercase mb-8 gsap-fade-up">
-        LET'S BUILD SOMETHING WORTH REMEMBERING.
-      </h2>
-      <p class="text-white/90 text-lg md:text-xl font-normal leading-relaxed mb-12 gsap-fade-up">
-        Whether you're building an image, launching a movement, or solving a perception problem — we're here to think it through with you.
-      </p>
-      <div class="flex flex-col items-center gap-10 gsap-fade-up">
-        <a href="mailto:hello@bonbern.com" class="btn-cta-dark">
-          Start a Conversation
-          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+    <!-- ==================== SECTION 6: FINAL CTA ==================== -->
+    <section id="cta-section" class="relative overflow-hidden">
+      <div class="bg-primary py-32 md:py-48 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2
+            class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] text-white uppercase mb-8 gsap-fade-up"
+          >
+            LET'S BUILD SOMETHING WORTH REMEMBERING.
+          </h2>
+          <p
+            class="text-white/90 text-lg md:text-xl font-normal leading-relaxed mb-12 gsap-fade-up"
+          >
+            Whether you're building an image, launching a movement, or solving a
+            perception problem — we're here to think it through with you.
+          </p>
+          <div class="flex flex-col items-center gap-10 gsap-fade-up">
+            <a href="mailto:hello@bonbern.com" class="btn-cta-dark">
+              Start a Conversation
+              <span class="material-symbols-outlined text-lg"
+                >arrow_forward</span
+              >
+            </a>
+            <div class="w-full max-w-lg relative group">
+              <input
+                id="cta-chat-input"
+                class="w-full bg-white text-neutral-900 px-8 py-5 rounded-2xl shadow-2xl focus:ring-0 border-none placeholder:text-neutral-400 text-base pr-16 transition-all duration-300 font-body"
+                placeholder="Tell us what you're thinking..."
+                type="text"
+              />
+              <button
+                id="cta-chat-submit"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-neutral-100 rounded-xl flex items-center justify-center hover:bg-neutral-200 transition-colors cursor-pointer"
+              >
+                <span class="material-symbols-outlined text-neutral-900"
+                  >north_east</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GLOBAL FLOATING CTA BAR ==================== -->
+    <div
+      id="global-floating-cta"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-fit max-w-[92vw] transition-all duration-500 opacity-0 translate-y-10 pointer-events-none"
+    >
+      <div
+        class="floating-cta-inner flex items-center gap-3 md:gap-6 px-6 py-3.5 rounded-full border border-white/20 bg-black/80 backdrop-blur-xl shadow-[0_12px_45px_rgba(0,0,0,0.85)] hover:border-white/35 transition-all duration-300 pointer-events-auto"
+      >
+        <span
+          class="text-white text-xs sm:text-sm font-medium hidden sm:inline-block tracking-wide"
+        >
+          No gimmicks. No empty promises. Just strategic clarity.
+        </span>
+        <span class="text-white text-xs font-medium sm:hidden tracking-wide">
+          Strategic clarity.
+        </span>
+        <a
+          href="mailto:hello@bonbern.com"
+          class="btn-primary flex-shrink-0 !py-2.5 !px-5 text-xs sm:text-sm rounded-full flex items-center gap-2.5 group"
+        >
+          <span>Start a conversation</span>
+          <i
+            class="fa-solid fa-paper-plane text-xs transform group-hover:translate-x-1 transition-transform"
+          ></i>
         </a>
-        <div class="w-full max-w-lg relative group">
-          <input id="cta-chat-input" class="w-full bg-white text-neutral-900 px-8 py-5 rounded-2xl shadow-2xl focus:ring-0 border-none placeholder:text-neutral-400 text-base pr-16 transition-all duration-300 font-body" placeholder="Tell us what you're thinking..." type="text"/>
-          <button id="cta-chat-submit" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-neutral-100 rounded-xl flex items-center justify-center hover:bg-neutral-200 transition-colors cursor-pointer">
-            <span class="material-symbols-outlined text-neutral-900">north_east</span>
+      </div>
+    </div>
+
+    <!-- ==================== CINEMATIC FOOTER ==================== -->
+    <div
+      id="footer-wrapper"
+      class="relative h-screen w-full font-body overflow-hidden -mt-10"
+      style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); z-index: 30"
+    >
+      <footer
+        class="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-[#050505] text-[#f0f0f0] cinematic-footer-wrapper"
+      >
+        <!-- Ambient Light & Grid -->
+        <div
+          class="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-full blur-[80px] pointer-events-none z-0"
+        ></div>
+        <div
+          class="footer-bg-grid absolute inset-0 z-0 pointer-events-none"
+        ></div>
+
+        <!-- Giant background text -->
+        <div
+          id="footer-giant-bg-text"
+          class="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none uppercase"
+        >
+          BONBERN
+        </div>
+
+        <!-- Diagonal Sleek Marquee -->
+        <div
+          class="absolute top-12 left-0 w-full overflow-hidden border-y border-white/8 bg-black/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl mt-12"
+        >
+          <div
+            class="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-medium tracking-[0.3em] text-neutral-500 uppercase"
+          >
+            <div class="flex items-center space-x-12 px-6">
+              <span>Decode Behavior</span>
+              <span class="text-primary/50">✦</span>
+              <span>Design Narrative</span>
+              <span class="text-neutral-600">✦</span>
+              <span>Psychological Protagonist</span>
+              <span class="text-primary/50">✦</span> <span>Build Assets</span>
+              <span class="text-neutral-600">✦</span>
+              <span>Adapt & Amplify</span>
+              <span class="text-primary/50">✦</span>
+            </div>
+            <div class="flex items-center space-x-12 px-6">
+              <span>Decode Behavior</span>
+              <span class="text-primary/50">✦</span>
+              <span>Design Narrative</span>
+              <span class="text-neutral-600">✦</span>
+              <span>Psychological Protagonist</span>
+              <span class="text-primary/50">✦</span> <span>Build Assets</span>
+              <span class="text-neutral-600">✦</span>
+              <span>Adapt & Amplify</span>
+              <span class="text-primary/50">✦</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Center Content -->
+        <div
+          class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto"
+        >
+          <h2
+            id="footer-heading"
+            class="text-4xl md:text-7xl font-semibold footer-text-glow tracking-tight mb-12 text-center leading-none opacity-0 translate-y-8"
+          >
+            LOGIC IS THE SHADOW OF PASSION.
+          </h2>
+
+          <div
+            id="footer-links"
+            class="flex flex-col items-center gap-6 w-full opacity-0 translate-y-8"
+          >
+            <div class="flex flex-wrap justify-center gap-4 w-full">
+              <a
+                href="mailto:hello@bonbern.com"
+                class="magnetic-btn footer-glass-pill px-10 py-5 rounded-full text-white font-medium text-sm md:text-base flex items-center gap-3 group uppercase tracking-[0.2em] cursor-pointer shadow-lg outline-none"
+              >
+                <span>Start a Conversation</span>
+                <i
+                  class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+              <a
+                href="#about-section"
+                class="magnetic-btn footer-glass-pill px-10 py-5 rounded-full text-white font-medium text-sm md:text-base flex items-center gap-3 group uppercase tracking-[0.2em] cursor-pointer shadow-lg outline-none"
+              >
+                <span>View Our Manifesto</span>
+              </a>
+            </div>
+
+            <!-- Social Media Icons in Footer -->
+            <div class="flex items-center gap-4 mt-2">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                class="social-icon-btn"
+                aria-label="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener"
+                class="social-icon-btn"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener"
+                class="social-icon-btn"
+                aria-label="Twitter"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener"
+                class="social-icon-btn"
+                aria-label="YouTube"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+
+            <div
+              class="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-4"
+            >
+              <a
+                href="#features-section"
+                class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors"
+                >Services</a
+              >
+              <a
+                href="#process-section"
+                class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors"
+                >Process</a
+              >
+              <a
+                href="#partnerships"
+                class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors"
+                >Partnerships</a
+              >
+              <a
+                href="#team"
+                class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors"
+                >Founder</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden"
+        >
+          <div
+            class="text-neutral-600 text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase md:order-1 order-2"
+          >
+            © 2026 BonBern Think Tank Labs.
+          </div>
+          <div
+            class="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-white/8 shadow-none"
+          >
+            <span
+              class="text-neutral-500 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]"
+              >Engineered with</span
+            >
+            <span
+              class="text-sm md:text-base text-primary animate-footer-heartbeat"
+              >◆</span
+            >
+            <span
+              class="text-neutral-500 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]"
+              >by</span
+            >
+            <span
+              class="text-white font-semibold text-xs md:text-sm tracking-normal ml-1 uppercase tracking-widest"
+              >BonBern</span
+            >
+          </div>
+          <button
+            class="magnetic-btn w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-neutral-500 hover:text-white group order-3 cursor-pointer shadow-none outline-none"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          >
+            <i
+              class="fa-solid fa-chevron-up text-sm transform group-hover:-translate-y-1 transition-transform"
+            ></i>
           </button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== CINEMATIC FOOTER ==================== -->
-<div id="footer-wrapper" class="relative h-screen w-full font-body overflow-hidden -mt-10" style="clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%); z-index: 30;">
-  <footer class="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-[#050505] text-[#f0f0f0] cinematic-footer-wrapper">
-    <!-- Ambient Light & Grid -->
-    <div class="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-full blur-[80px] pointer-events-none z-0"></div>
-    <div class="footer-bg-grid absolute inset-0 z-0 pointer-events-none"></div>
-    
-    <!-- Giant background text -->
-    <div id="footer-giant-bg-text" class="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none uppercase">
-      BONBERN
+      </footer>
     </div>
 
-    <!-- Diagonal Sleek Marquee -->
-    <div class="absolute top-12 left-0 w-full overflow-hidden border-y border-white/8 bg-black/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl mt-12">
-      <div class="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-medium tracking-[0.3em] text-neutral-500 uppercase">
-        <div class="flex items-center space-x-12 px-6">
-          <span>Decode Behavior</span> <span class="text-primary/50">✦</span>
-          <span>Design Narrative</span> <span class="text-neutral-600">✦</span>
-          <span>Psychological Protagonist</span> <span class="text-primary/50">✦</span>
-          <span>Build Assets</span> <span class="text-neutral-600">✦</span>
-          <span>Adapt & Amplify</span> <span class="text-primary/50">✦</span>
-        </div>
-        <div class="flex items-center space-x-12 px-6">
-          <span>Decode Behavior</span> <span class="text-primary/50">✦</span>
-          <span>Design Narrative</span> <span class="text-neutral-600">✦</span>
-          <span>Psychological Protagonist</span> <span class="text-primary/50">✦</span>
-          <span>Build Assets</span> <span class="text-neutral-600">✦</span>
-          <span>Adapt & Amplify</span> <span class="text-primary/50">✦</span>
-        </div>
-      </div>
-    </div>
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ===== REGISTER GSAP PLUGINS =====
+        gsap.registerPlugin(ScrollTrigger);
 
-    <!-- Main Center Content -->
-    <div class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto">
-      <h2 id="footer-heading" class="text-4xl md:text-7xl font-semibold footer-text-glow tracking-tight mb-12 text-center leading-none opacity-0 translate-y-8">
-        LOGIC IS THE SHADOW OF PASSION.
-      </h2>
+        // ===== GSAP DEFAULTS =====
+        gsap.defaults({ duration: 0.8, ease: "power3.out" });
 
-      <div id="footer-links" class="flex flex-col items-center gap-6 w-full opacity-0 translate-y-8">
-        <div class="flex flex-wrap justify-center gap-4 w-full">
-          <a href="mailto:hello@bonbern.com" class="magnetic-btn footer-glass-pill px-10 py-5 rounded-full text-white font-medium text-sm md:text-base flex items-center gap-3 group uppercase tracking-[0.2em] cursor-pointer shadow-lg outline-none">
-             Start a Conversation
-          </a>
-          <a href="#about-section" class="magnetic-btn footer-glass-pill px-10 py-5 rounded-full text-white font-medium text-sm md:text-base flex items-center gap-3 group uppercase tracking-[0.2em] cursor-pointer shadow-lg outline-none">
-             View Our Manifesto
-          </a>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-4">
-          <a href="#features-section" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Services</a>
-          <a href="#partnerships" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Partnerships</a>
-          <a href="#team" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Team</a>
-          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Privacy</a>
-          <a href="#" class="magnetic-btn footer-glass-pill px-6 py-3 rounded-full text-neutral-500 font-medium text-xs md:text-sm hover:text-white uppercase tracking-wider cursor-pointer shadow-none transition-colors">Terms</a>
-        </div>
-      </div>
-    </div>
+        // ===== PRELOADER =====
+        const roles = [
+          "artists",
+          "marketers",
+          "producers",
+          "filmmakers",
+          "strategists",
+          "creatives",
+          "visionaries",
+          "thinkers",
+          "innovators",
+          "storytellers",
+        ];
+        let roleIndex = 0;
+        const roleSpan = document.getElementById("preloader-role");
+        const preloader = document.getElementById("preloader");
+        const prefix = document.getElementById("preloader-prefix");
 
-    <!-- Bottom Bar -->
-    <div class="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
-      <div class="text-neutral-600 text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase md:order-1 order-2">
-        © 2026 BonBern Think Tank Labs.
-      </div>
-      <div class="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-white/8 shadow-none">
-        <span class="text-neutral-500 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]">Engineered with</span>
-        <span class="text-sm md:text-base text-primary animate-footer-heartbeat">◆</span>
-        <span class="text-neutral-500 text-[10px] md:text-xs font-medium uppercase tracking-[0.2em]">by</span>
-        <span class="text-white font-semibold text-xs md:text-sm tracking-normal ml-1 uppercase tracking-widest">BonBern</span>
-      </div>
-      <button class="magnetic-btn w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-neutral-500 hover:text-white group order-3 cursor-pointer shadow-none outline-none" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-        <span class="material-symbols-outlined transform group-hover:-translate-y-1.5 transition-transform duration-300">expand_less</span>
-      </button>
-    </div>
-  </footer>
-</div>
+        setTimeout(() => {
+          prefix.style.transform = "translateY(0)";
+          prefix.style.opacity = "1";
+        }, 50);
 
-<!-- ==================== SCRIPTS ==================== -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    // ===== REGISTER GSAP PLUGINS =====
-    gsap.registerPlugin(ScrollTrigger);
+        const interval = setInterval(() => {
+          roleSpan.textContent = roles[roleIndex];
+          roleSpan.classList.remove("role-animate");
+          void roleSpan.offsetWidth;
+          roleSpan.classList.add("role-animate");
 
-    // ===== GSAP DEFAULTS =====
-    gsap.defaults({ duration: 0.8, ease: "power3.out" });
-
-    // ===== PRELOADER =====
-    const roles = ['artists', 'marketers', 'producers', 'filmmakers', 'strategists', 'creatives', 'visionaries', 'thinkers', 'innovators', 'storytellers'];
-    let roleIndex = 0;
-    const roleSpan = document.getElementById('preloader-role');
-    const preloader = document.getElementById('preloader');
-    const prefix = document.getElementById('preloader-prefix');
-
-    setTimeout(() => {
-        prefix.style.transform = 'translateY(0)';
-        prefix.style.opacity = '1';
-    }, 50);
-
-    const interval = setInterval(() => {
-        roleSpan.textContent = roles[roleIndex];
-        roleSpan.classList.remove('role-animate');
-        void roleSpan.offsetWidth;
-        roleSpan.classList.add('role-animate');
-
-        if (roleIndex === roles.length - 1) {
+          if (roleIndex === roles.length - 1) {
             clearInterval(interval);
             setTimeout(() => {
-                preloader.style.transition = 'opacity 0.8s ease-in-out';
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.remove();
-                    document.body.classList.remove('overflow-hidden');
-                    animateHero();
-                }, 800);
+              preloader.style.transition = "opacity 0.8s ease-in-out";
+              preloader.style.opacity = "0";
+              setTimeout(() => {
+                preloader.remove();
+                document.body.classList.remove("overflow-hidden");
+                animateHero();
+              }, 800);
             }, 500);
-        } else {
+          } else {
             roleIndex++;
-        }
-    }, 150);
+          }
+        }, 150);
 
-    // ===== NAVBAR HAMBURGER =====
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navDropdown = document.getElementById('nav-dropdown');
-    let isNavOpen = false;
+        // ===== NAVBAR HAMBURGER =====
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const navDropdown = document.getElementById("nav-dropdown");
+        let isNavOpen = false;
 
-    hamburgerBtn.addEventListener('click', () => {
-        isNavOpen = !isNavOpen;
-        hamburgerBtn.classList.toggle('hamburger-open', isNavOpen);
-        navDropdown.classList.toggle('open', isNavOpen);
-    });
-
-    // Close dropdown when clicking nav links
-    navDropdown.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            isNavOpen = false;
-            hamburgerBtn.classList.remove('hamburger-open');
-            navDropdown.classList.remove('open');
+        hamburgerBtn.addEventListener("click", () => {
+          isNavOpen = !isNavOpen;
+          hamburgerBtn.classList.toggle("hamburger-open", isNavOpen);
+          navDropdown.classList.toggle("open", isNavOpen);
         });
-    });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-        if (isNavOpen && !e.target.closest('#main-nav')) {
+        // Close dropdown when clicking nav links
+        navDropdown.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
             isNavOpen = false;
-            hamburgerBtn.classList.remove('hamburger-open');
-            navDropdown.classList.remove('open');
-        }
-    });
+            hamburgerBtn.classList.remove("hamburger-open");
+            navDropdown.classList.remove("open");
+          });
+        });
 
-    // ===== GSAP matchMedia — RESPECTS prefers-reduced-motion =====
-    const mm = gsap.matchMedia();
+        // Close on outside click
+        document.addEventListener("click", (e) => {
+          if (isNavOpen && !e.target.closest("#main-nav")) {
+            isNavOpen = false;
+            hamburgerBtn.classList.remove("hamburger-open");
+            navDropdown.classList.remove("open");
+          }
+        });
 
-    mm.add(
-        {
+        // ===== GSAP matchMedia — RESPECTS prefers-reduced-motion =====
+        const mm = gsap.matchMedia();
+
+        mm.add(
+          {
             isDesktop: "(min-width: 768px)",
             isMobile: "(max-width: 767px)",
-            reduceMotion: "(prefers-reduced-motion: reduce)"
-        },
-        (context) => {
+            reduceMotion: "(prefers-reduced-motion: reduce)",
+          },
+          (context) => {
             const { isDesktop, reduceMotion } = context.conditions;
             const dur = reduceMotion ? 0 : undefined;
 
             // ===== HERO ANIMATIONS =====
             function animateHeroInner() {
-                const heroLogo = document.getElementById('hero-logo');
-                const heroLine1 = document.getElementById('hero-line-1');
-                const heroLine2 = document.getElementById('hero-line-2');
-                const heroSubtitle = document.getElementById('hero-subtitle');
-                const heroCta = document.getElementById('hero-cta');
+              const heroLogo = document.getElementById("hero-logo");
+              const heroLine1 = document.getElementById("hero-line-1");
+              const heroLine2 = document.getElementById("hero-line-2");
+              const heroSubtitle = document.getElementById("hero-subtitle");
+              const heroCta = document.getElementById("hero-cta");
 
-                const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+              const heroTl = gsap.timeline({
+                defaults: { ease: "power3.out" },
+              });
 
-                if (heroLogo) {
-                    heroTl.fromTo(heroLogo,
-                        { opacity: 0, y: reduceMotion ? 0 : 40, scale: 0.95 },
-                        { opacity: 1, y: 0, scale: 1, duration: dur ?? 1 }
-                    );
-                }
-                if (heroLine1) {
-                    heroTl.fromTo(heroLine1,
-                        { opacity: 0, y: reduceMotion ? 0 : 60 },
-                        { opacity: 1, y: 0, duration: dur ?? 1 },
-                        reduceMotion ? 0 : "-=0.7"
-                    );
-                }
-                if (heroLine2) {
-                    heroTl.fromTo(heroLine2,
-                        { opacity: 0, y: reduceMotion ? 0 : 60 },
-                        { opacity: 1, y: 0, duration: dur ?? 1 },
-                        reduceMotion ? 0 : "-=0.6"
-                    );
-                }
-                if (heroSubtitle) {
-                    heroTl.fromTo(heroSubtitle,
-                        { opacity: 0, y: reduceMotion ? 0 : 30 },
-                        { opacity: 1, y: 0, duration: dur ?? 0.8 },
-                        reduceMotion ? 0 : "-=0.4"
-                    );
-                }
-                if (heroCta) {
-                    heroTl.fromTo(heroCta,
-                        { opacity: 0, y: reduceMotion ? 0 : 30 },
-                        { opacity: 1, y: 0, duration: dur ?? 0.8 },
-                        reduceMotion ? 0 : "-=0.3"
-                    );
-                }
+              if (heroLogo) {
+                heroTl.fromTo(
+                  heroLogo,
+                  { opacity: 0, y: reduceMotion ? 0 : 40, scale: 0.95 },
+                  { opacity: 1, y: 0, scale: 1, duration: dur ?? 1 },
+                );
+              }
+              if (heroLine1) {
+                heroTl.fromTo(
+                  heroLine1,
+                  { opacity: 0, y: reduceMotion ? 0 : 60 },
+                  { opacity: 1, y: 0, duration: dur ?? 1 },
+                  reduceMotion ? 0 : "-=0.7",
+                );
+              }
+              if (heroLine2) {
+                heroTl.fromTo(
+                  heroLine2,
+                  { opacity: 0, y: reduceMotion ? 0 : 60 },
+                  { opacity: 1, y: 0, duration: dur ?? 1 },
+                  reduceMotion ? 0 : "-=0.6",
+                );
+              }
+              if (heroSubtitle) {
+                heroTl.fromTo(
+                  heroSubtitle,
+                  { opacity: 0, y: reduceMotion ? 0 : 30 },
+                  { opacity: 1, y: 0, duration: dur ?? 0.8 },
+                  reduceMotion ? 0 : "-=0.4",
+                );
+              }
+              if (heroCta) {
+                heroTl.fromTo(
+                  heroCta,
+                  { opacity: 0, y: reduceMotion ? 0 : 30 },
+                  { opacity: 1, y: 0, duration: dur ?? 0.8 },
+                  reduceMotion ? 0 : "-=0.3",
+                );
+              }
             }
             window._animateHeroInner = animateHeroInner;
 
             // ===== SCROLL-TRIGGERED SECTION REVEALS =====
             // Generic fade-up
-            document.querySelectorAll('.gsap-fade-up').forEach((el) => {
-                gsap.fromTo(el,
-                    { opacity: 0, y: reduceMotion ? 0 : 60 },
-                    {
-                        opacity: 1, y: 0,
-                        duration: dur ?? 0.9,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top 88%",
-                            end: "bottom 20%",
-                            toggleActions: "play none none none"
-                        }
-                    }
-                );
+            document.querySelectorAll(".gsap-fade-up").forEach((el) => {
+              gsap.fromTo(
+                el,
+                { opacity: 0, y: reduceMotion ? 0 : 60 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: dur ?? 0.9,
+                  ease: "power3.out",
+                  scrollTrigger: {
+                    trigger: el,
+                    start: "top 88%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none none",
+                  },
+                },
+              );
             });
 
             // ===== FEATURE CARDS — IntersectionObserver + GSAP reveal =====
-            const featureCards = document.querySelectorAll('.feature-card');
-            const featureNavBtns = document.querySelectorAll('.feature-nav-btn');
+            const featureCards = document.querySelectorAll(".feature-card");
+            const featureNavBtns =
+              document.querySelectorAll(".feature-nav-btn");
 
             // Active detection (threshold 0.6) — highlights nav button
-            const activeObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.id;
-                        featureNavBtns.forEach(btn => {
-                            btn.classList.toggle('active', btn.dataset.target === id);
-                        });
-                    }
+            const activeObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    featureNavBtns.forEach((btn) => {
+                      btn.classList.toggle("active", btn.dataset.target === id);
+                    });
+                  }
                 });
-            }, { threshold: 0.6 });
+              },
+              { threshold: 0.6 },
+            );
 
             // Reveal animation (threshold 0.15) — slide in from right
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!reduceMotion) {
-                            gsap.to(entry.target, {
-                                opacity: 1,
-                                x: 0,
-                                duration: 0.7,
-                                ease: "power2.out"
-                            });
-                        } else {
-                            entry.target.classList.remove('feature-card-hidden');
-                            entry.target.classList.add('feature-card-visible');
-                        }
-                        revealObserver.unobserve(entry.target);
+            const revealObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    if (!reduceMotion) {
+                      gsap.to(entry.target, {
+                        opacity: 1,
+                        x: 0,
+                        duration: 0.7,
+                        ease: "power2.out",
+                      });
+                    } else {
+                      entry.target.classList.remove("feature-card-hidden");
+                      entry.target.classList.add("feature-card-visible");
                     }
+                    revealObserver.unobserve(entry.target);
+                  }
                 });
-            }, { threshold: 0.15 });
+              },
+              { threshold: 0.15 },
+            );
 
-            featureCards.forEach(card => {
-                activeObserver.observe(card);
-                revealObserver.observe(card);
-                // Set initial GSAP state
-                if (!reduceMotion) {
-                    gsap.set(card, { opacity: 0, x: 64 });
-                }
+            featureCards.forEach((card) => {
+              activeObserver.observe(card);
+              revealObserver.observe(card);
+              // Set initial GSAP state
+              if (!reduceMotion) {
+                gsap.set(card, { opacity: 0, x: 64 });
+              }
             });
 
             // Feature nav click scrolls to card
-            featureNavBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const target = document.getElementById(btn.dataset.target);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                });
+            featureNavBtns.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                const target = document.getElementById(btn.dataset.target);
+                if (target) {
+                  target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }
+              });
             });
 
             // ===== PARALLAX ELEMENTS =====
             if (!reduceMotion) {
-                document.querySelectorAll('[data-parallax]').forEach(el => {
-                    const speed = parseFloat(el.getAttribute('data-speed') || '0.2');
-                    gsap.to(el, {
-                        y: () => -ScrollTrigger.maxScroll(window) * speed * 0.1,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: 1.5
-                        }
-                    });
+              document.querySelectorAll("[data-parallax]").forEach((el) => {
+                const speed = parseFloat(
+                  el.getAttribute("data-speed") || "0.2",
+                );
+                gsap.to(el, {
+                  y: () => -ScrollTrigger.maxScroll(window) * speed * 0.1,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: el,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1.5,
+                  },
                 });
+              });
             }
 
             // ===== NAV SCROLL EFFECT — hide pill on scroll down =====
-            const nav = document.getElementById('main-nav');
+            const nav = document.getElementById("main-nav");
             if (nav) {
-                ScrollTrigger.create({
-                    trigger: document.body,
-                    start: "top -100",
-                    onUpdate: (self) => {
-                        if (self.direction === 1 && self.scroll() > 200) {
-                            gsap.to(nav, { y: -80, autoAlpha: 0, duration: 0.4, ease: "power2.inOut" });
-                        } else {
-                            gsap.to(nav, { y: 0, autoAlpha: 1, duration: 0.4, ease: "power2.out" });
-                        }
-                    }
-                });
+              ScrollTrigger.create({
+                trigger: document.body,
+                start: "top -100",
+                onUpdate: (self) => {
+                  if (self.direction === 1 && self.scroll() > 200) {
+                    gsap.to(nav, {
+                      y: -80,
+                      autoAlpha: 0,
+                      duration: 0.4,
+                      ease: "power2.inOut",
+                    });
+                  } else {
+                    gsap.to(nav, {
+                      y: 0,
+                      autoAlpha: 1,
+                      duration: 0.4,
+                      ease: "power2.out",
+                    });
+                  }
+                },
+              });
+            }
+
+            // ===== GLOBAL FLOATING CTA SCROLL EFFECT =====
+            const globalFloatingCta = document.getElementById(
+              "global-floating-cta",
+            );
+            if (globalFloatingCta) {
+              ScrollTrigger.create({
+                trigger: document.body,
+                start: "top -300",
+                onUpdate: (self) => {
+                  if (self.scroll() > 250) {
+                    gsap.to(globalFloatingCta, {
+                      y: 0,
+                      opacity: 1,
+                      autoAlpha: 1,
+                      duration: 0.4,
+                      ease: "power2.out",
+                    });
+                  } else {
+                    gsap.to(globalFloatingCta, {
+                      y: 40,
+                      opacity: 0,
+                      autoAlpha: 0,
+                      duration: 0.3,
+                      ease: "power2.in",
+                    });
+                  }
+                },
+              });
+            }
+
+            // ===== PROCESS CARDS — staggered entrance =====
+            const processCards = document.querySelectorAll(".process-card");
+            if (processCards.length && !reduceMotion) {
+              ScrollTrigger.batch(".process-card", {
+                onEnter: (batch) => {
+                  gsap.fromTo(
+                    batch,
+                    { opacity: 0, y: 60, scale: 0.95 },
+                    {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      stagger: 0.1,
+                      duration: 0.8,
+                      ease: "power3.out",
+                      overwrite: true,
+                    },
+                  );
+                },
+                start: "top 88%",
+                once: true,
+              });
             }
 
             // ===== WORK CARDS — staggered entrance =====
-            const workCards = document.querySelectorAll('.work-card');
+            const workCards = document.querySelectorAll(".work-card");
             if (workCards.length && !reduceMotion) {
-                ScrollTrigger.batch('.work-card', {
-                    onEnter: (batch) => {
-                        gsap.fromTo(batch,
-                            { opacity: 0, y: 80, rotation: 2 },
-                            { opacity: 1, y: 0, rotation: 0, stagger: 0.15, duration: 1, ease: "power3.out", overwrite: true }
-                        );
+              ScrollTrigger.batch(".work-card", {
+                onEnter: (batch) => {
+                  gsap.fromTo(
+                    batch,
+                    { opacity: 0, y: 80, rotation: 2 },
+                    {
+                      opacity: 1,
+                      y: 0,
+                      rotation: 0,
+                      stagger: 0.15,
+                      duration: 1,
+                      ease: "power3.out",
+                      overwrite: true,
                     },
-                    start: "top 85%",
-                    once: true
-                });
+                  );
+                },
+                start: "top 85%",
+                once: true,
+              });
             }
 
             // ===== TEAM CARDS — staggered batch entrance =====
-            const teamCards = document.querySelectorAll('.team-card');
+            const teamCards = document.querySelectorAll(".team-card");
             if (teamCards.length && !reduceMotion) {
-                ScrollTrigger.batch('.team-card', {
-                    onEnter: (batch) => {
-                        gsap.fromTo(batch,
-                            { opacity: 0, y: 60, scale: 0.95 },
-                            { opacity: 1, y: 0, scale: 1, stagger: 0.12, duration: 0.9, ease: "power3.out", overwrite: true }
-                        );
+              ScrollTrigger.batch(".team-card", {
+                onEnter: (batch) => {
+                  gsap.fromTo(
+                    batch,
+                    { opacity: 0, y: 60, scale: 0.95 },
+                    {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      stagger: 0.12,
+                      duration: 0.9,
+                      ease: "power3.out",
+                      overwrite: true,
                     },
-                    start: "top 85%",
-                    once: true
-                });
+                  );
+                },
+                start: "top 85%",
+                once: true,
+              });
             }
 
             // ===== CTA SECTION ENTRANCE =====
-            const ctaSection = document.getElementById('cta-section');
+            const ctaSection = document.getElementById("cta-section");
             if (ctaSection && !reduceMotion) {
-                const ctaTl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ctaSection,
-                        start: "top 70%",
-                        toggleActions: "play none none none"
-                    }
-                });
-                ctaTl.from(ctaSection.querySelector('h2'), { y: 60, opacity: 0, duration: 0.9, ease: "power3.out" })
-                     .from(ctaSection.querySelector('p'), { y: 40, opacity: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
-                     .from(ctaSection.querySelector('.flex.flex-col'), { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+              const ctaTl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: ctaSection,
+                  start: "top 70%",
+                  toggleActions: "play none none none",
+                },
+              });
+              ctaTl
+                .from(ctaSection.querySelector("h2"), {
+                  y: 60,
+                  opacity: 0,
+                  duration: 0.9,
+                  ease: "power3.out",
+                })
+                .from(
+                  ctaSection.querySelector("p"),
+                  { y: 40, opacity: 0, duration: 0.7, ease: "power3.out" },
+                  "-=0.5",
+                )
+                .from(
+                  ctaSection.querySelector(".flex.flex-col"),
+                  { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" },
+                  "-=0.4",
+                );
             }
 
             // ===== FOOTER ANIMATIONS =====
-            const footerWrapper = document.getElementById('footer-wrapper');
-            const giantText = document.getElementById('footer-giant-bg-text');
-            const heading = document.getElementById('footer-heading');
-            const links = document.getElementById('footer-links');
+            const footerWrapper = document.getElementById("footer-wrapper");
+            const giantText = document.getElementById("footer-giant-bg-text");
+            const heading = document.getElementById("footer-heading");
+            const links = document.getElementById("footer-links");
 
             if (footerWrapper) {
-                gsap.fromTo(giantText,
-                    { y: "10vh", scale: 0.8, opacity: 0 },
-                    {
-                        y: "0vh", scale: 1, opacity: 1, ease: "power2.out",
-                        scrollTrigger: { trigger: footerWrapper, start: "top 80%", end: "bottom bottom", scrub: 1 }
-                    }
-                );
+              gsap.fromTo(
+                giantText,
+                { y: "10vh", scale: 0.8, opacity: 0 },
+                {
+                  y: "0vh",
+                  scale: 1,
+                  opacity: 1,
+                  ease: "power2.out",
+                  scrollTrigger: {
+                    trigger: footerWrapper,
+                    start: "top 80%",
+                    end: "bottom bottom",
+                    scrub: 1,
+                  },
+                },
+              );
 
-                gsap.fromTo([heading, links],
-                    { y: 50, opacity: 0 },
-                    {
-                        y: 0, opacity: 1, stagger: 0.15, ease: "power3.out",
-                        scrollTrigger: { trigger: footerWrapper, start: "top 45%", end: "bottom bottom", scrub: 1 }
-                    }
-                );
+              gsap.fromTo(
+                [heading, links],
+                { y: 50, opacity: 0 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  stagger: 0.15,
+                  ease: "power3.out",
+                  scrollTrigger: {
+                    trigger: footerWrapper,
+                    start: "top 45%",
+                    end: "bottom bottom",
+                    scrub: 1,
+                  },
+                },
+              );
             }
 
             // ===== MAGNETIC BUTTONS =====
             if (!reduceMotion) {
-                document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                    btn.addEventListener('mousemove', (e) => {
-                        const rect = btn.getBoundingClientRect();
-                        const h = rect.width / 2;
-                        const w = rect.height / 2;
-                        const x = e.clientX - rect.left - h;
-                        const y = e.clientY - rect.top - w;
-                        gsap.to(btn, {
-                            x: x * 0.35, y: y * 0.35, rotationX: -y * 0.12, rotationY: x * 0.12, scale: 1.04,
-                            ease: "power2.out", duration: 0.4
-                        });
-                    });
-                    btn.addEventListener('mouseleave', () => {
-                        gsap.to(btn, { x: 0, y: 0, rotationX: 0, rotationY: 0, scale: 1, ease: "elastic.out(1, 0.3)", duration: 1.2 });
-                    });
+              document.querySelectorAll(".magnetic-btn").forEach((btn) => {
+                btn.addEventListener("mousemove", (e) => {
+                  const rect = btn.getBoundingClientRect();
+                  const h = rect.width / 2;
+                  const w = rect.height / 2;
+                  const x = e.clientX - rect.left - h;
+                  const y = e.clientY - rect.top - w;
+                  gsap.to(btn, {
+                    x: x * 0.35,
+                    y: y * 0.35,
+                    rotationX: -y * 0.12,
+                    rotationY: x * 0.12,
+                    scale: 1.04,
+                    ease: "power2.out",
+                    duration: 0.4,
+                  });
                 });
+                btn.addEventListener("mouseleave", () => {
+                  gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    rotationX: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    ease: "elastic.out(1, 0.3)",
+                    duration: 1.2,
+                  });
+                });
+              });
             }
 
             // Cleanup
             return () => {};
-        }
-    );
+          },
+        );
 
-    // Hero animation function called after preloader completes
-    function animateHero() {
-        if (window._animateHeroInner) {
+        // Hero animation function called after preloader completes
+        function animateHero() {
+          if (window._animateHeroInner) {
             window._animateHeroInner();
+          }
         }
-    }
 
-    // ===== CTA INPUT → MAILTO =====
-    const ctaInput = document.getElementById('cta-chat-input');
-    const ctaSubmit = document.getElementById('cta-chat-submit');
+        // ===== CTA INPUT → MAILTO =====
+        const ctaInput = document.getElementById("cta-chat-input");
+        const ctaSubmit = document.getElementById("cta-chat-submit");
 
-    if (ctaSubmit && ctaInput) {
-        function submitCTA() {
+        if (ctaSubmit && ctaInput) {
+          function submitCTA() {
             const val = ctaInput.value.trim();
             if (val) {
-                window.location.href = `mailto:hello@bonbern.com?subject=Let's Talk&body=${encodeURIComponent(val)}`;
-                ctaInput.value = '';
+              window.location.href = `mailto:hello@bonbern.com?subject=Let's Talk&body=${encodeURIComponent(val)}`;
+              ctaInput.value = "";
             }
+          }
+          ctaSubmit.addEventListener("click", submitCTA);
+          ctaInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") submitCTA();
+          });
         }
-        ctaSubmit.addEventListener('click', submitCTA);
-        ctaInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitCTA(); });
-    }
-});
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
