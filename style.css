@@ -1,20 +1,108 @@
 /* 
    BonBern — Drift-Inspired Premium Design System
-   GSAP-powered, scroll-animated, warm + dark hybrid
+   GSAP-powered, scroll-animated, white + dark hybrid
 */
 
+/* ===== LOCAL FONT DEFINITIONS ===== */
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('fonts/Avenir-Next-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('fonts/Avenir-Next-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Unageo';
+    src: url('fonts/Unageo-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('fonts/Louis George Cafe Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('fonts/Louis George Cafe.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Louis George Cafe';
+    src: url('fonts/Louis George Cafe Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ===== FONT IMPORTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap');
 
 /* ===== DESIGN TOKENS ===== */
 :root {
-    /* Warm palette */
-    --cream: #F6E4CF;
-    --cream-light: #FFF9F2;
-    --cream-muted: #D9C4AA;
-    --cream-muted-hover: #CEBA9E;
-    --espresso: #321C04;
-    --espresso-hover: #1F1003;
+    /* White palette */
+    --cream: #FFFFFF;
+    --cream-light: #FFFFFF;
+    --cream-muted: #F0F0F0;
+    --cream-muted-hover: #E5E5E5;
+    --espresso: #111111;
+    --espresso-hover: #000000;
 
     /* Dark palette */
     --bg-void: #050505;
@@ -43,7 +131,9 @@
     --glass-border-hover: rgba(255, 255, 255, 0.18);
 
     /* Typography */
-    --font-body: 'Inter', system-ui, sans-serif;
+    --font-title: 'Avenir Next', system-ui, -apple-system, sans-serif;
+    --font-subtitle: 'Unageo', system-ui, -apple-system, sans-serif;
+    --font-body: 'Louis George Cafe', system-ui, -apple-system, sans-serif;
     --font-serif: 'Instrument Serif', Georgia, serif;
 
     /* Spacing */
@@ -102,11 +192,19 @@ body {
 }
 
 /* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-body);
+h1, h2, h3, h4, h5, h6, .font-title {
+    font-family: var(--font-title);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.1;
+}
+
+.font-subtitle, .subtitle, .section-label, .feature-nav-btn {
+    font-family: var(--font-subtitle);
+}
+
+.font-body {
+    font-family: var(--font-body);
 }
 
 .font-serif {
@@ -224,11 +322,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== HERO ===== */
 .hero-heading {
-    font-size: clamp(2.5rem, 8vw, 6rem);
-    font-weight: 400;
+    font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+    font-weight: 500;
     color: white;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
     text-align: center;
 }
 
