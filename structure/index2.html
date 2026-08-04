@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BonBern | Structure</title>
+    <meta
+      name="description"
+      content="BonBern Think Tank Labs — Structure Sketchsite"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/bubble_500.png" />
+
+    <!-- FontAwesome Icons -->
+    <script src="../fonts/fontawesome-free-7.3.1-web/js/all.min.js"></script>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Structure Sketchsite Stylesheet (Strict Font Rules) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#050505] text-white">
+    <!-- ==================== FLOATING PILL NAVBAR ==================== -->
+    <nav id="main-nav" class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+      <!-- Pill -->
+      <div class="navbar-pill flex items-center gap-4 px-6 py-3">
+        <a
+          href="#"
+          class="navbar-brand text-lg text-black select-none font-title"
+          >BonBern.</a
+        >
+        <button
+          id="hamburger-btn"
+          class="flex flex-col gap-[5px] items-center justify-center w-8 h-8 cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          <span class="w-5 h-[2px] bg-black transition-all"></span>
+          <span class="w-5 h-[2px] bg-black transition-all"></span>
+        </button>
+      </div>
+
+      <!-- Dropdown -->
+      <div
+        id="nav-dropdown"
+        class="navbar-dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl p-3 min-w-[210px] border border-black/5"
+      >
+        <a
+          href="#hero"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-house text-red-600 text-xs w-4"></i> Home
+        </a>
+        <a
+          href="#about-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-compass text-red-600 text-xs w-4"></i> About Us
+        </a>
+        <a
+          href="#process-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-timeline text-red-600 text-xs w-4"></i> Our
+          Process
+        </a>
+        <a
+          href="#partnerships"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-handshake text-red-600 text-xs w-4"></i>
+          Partnerships
+        </a>
+        <a
+          href="#founder-section"
+          class="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
+        >
+          <i class="fa-solid fa-user-tie text-red-600 text-xs w-4"></i> Founder
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== PAGE 1: HERO / LANDING PAGE ==================== -->
+    <section
+      id="hero"
+      class="relative w-full h-screen overflow-hidden mb-[-25px] flex flex-col justify-between"
+    >
+      <!-- Background Video -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="../images/Enhanced Clipify Eye TV.mp4" type="video/mp4" />
+      </video>
+      <!-- Semi-transparent Overlay -->
+      <div class="absolute inset-0 bg-black/40 z-[1]"></div>
+      <!-- Hero Content -->
+      <div
+        id="hero-content"
+        class="relative z-10 flex flex-col justify-between h-full px-6 pt-24 pb-12 text-center"
+      >
+        <!-- Giant Center Logo in Hero -->
+        <div
+          id="hero-logo"
+          class="flex justify-center items-center flex-1 my-auto pt-4"
+        >
+          <img
+            src="../images/logo.svg"
+            alt="BonBern Logo"
+            class="h-20 sm:h-32 md:h-44 lg:h-52 w-auto max-w-[320px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[850px] filter drop-shadow-[0_8px_32px_rgba(0,0,0,0.75)]"
+          />
+        </div>
+        <!-- Text Content (Positioned Lower) -->
+        <div class="max-w-4xl mx-auto space-y-3 mt-auto pb-4">
+          <!-- Line 1: Title (Avenir Next - Largest Font Size) -->
+          <h1
+            class="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white font-bold"
+          ></h1>
+          <!-- Line 2: Subtitle (Unageo - Medium Font Size) -->
+          <p
+            class="font-subtitle text-lg sm:text-xl md:text-2xl text-red-500 font-medium"
+          >
+            Perception Building Lab
+          </p>
+          <!-- Line 3+: Body (Louis George Cafe - Body Font Size) -->
+          <div
+            class="font-body text-sm sm:text-base md:text-lg text-white/85 space-y-1 max-w-2xl mx-auto leading-relaxed"
+          >
+            <p>We work with celebrities to build iconic images.</p>
+            <p>We work with labels and brands to craft viral campaigns.</p>
+            <p class="text-white font-semibold pt-1">
+              And we are passionate about solving real-world problems — because
+              we can, and we love it!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 2: ABOUT US ==================== -->
+    <section
+      id="about-section"
+      class="about-section py-24 md:py-36 px-6 border-b border-black/10"
+    >
+      <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Header Block -->
+        <div class="space-y-4">
+          <!-- Line 1: Title (Avenir Next - Largest) -->
+          <h2
+            class="font-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#111111] uppercase tracking-tight"
+          >
+            About Us
+          </h2>
+
+          <!-- Line 2: Subtitle (Unageo - Medium) -->
+          <p
+            class="font-subtitle text-xl sm:text-2xl md:text-3xl text-[#222222] leading-snug"
+          >
+            We’re a Think Tank — built for public figures, brands, and
+            change-makers.
+          </p>
+        </div>
+
+        <!-- Line 3+: Body (Louis George Cafe - Body Size) -->
+        <div
+          class="font-body text-base sm:text-lg md:text-xl text-[#444444] space-y-4 leading-relaxed pt-2 border-t border-black/10"
+        >
+          <p>
+            BonBern Think Tank Studio is a
+            <span class="font-bold text-[#D0362B]">behavior-first</span>
+            consultancy.
+          </p>
+          <p>
+            We believe the world doesn’t move on logic — it moves on emotions,
+            stories, and belief.
+          </p>
+          <p>So we go beyond marketing — into minds, memories, and meaning.</p>
+          <p>
+            We blend psychology with creativity to shape perception — from
+            image-building and viral campaigns to solving real-world problems
+            that demand attention.
+          </p>
+        </div>
+
+        <!-- Secret Subsection -->
+        <div
+          class="sketch-card bg-black/5 border border-black/10 p-8 rounded-2xl space-y-3"
+        >
+          <!-- Subtitle (Unageo) -->
+          <h3
+            class="font-subtitle text-xl sm:text-2xl text-red-600 font-semibold"
+          >
+            Our secret?
+          </h3>
+          <!-- Body (Louis George Cafe) -->
+          <p class="font-body text-base sm:text-lg text-[#222222]">
+            A rare mix of psychological insight, creative storytelling, and
+            tech-powered execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SUBTLE BACKGROUND WRAPPER (PROCESS -> FOUNDER -> CTA) ==================== -->
+    <div class="subtle-bg-wrapper">
+      <!-- Subtle Faded Background Image -->
+      <div class="subtle-bg-image"></div>
+      <div class="subtle-bg-overlay"></div>
+
+      <div class="subtle-bg-content space-y-32 py-24 md:py-36 px-6">
+        <!-- ==================== SECTION 3: OUR PROCESS ==================== -->
+        <section id="process-section" class="max-w-5xl mx-auto space-y-12">
+          <div class="space-y-4">
+            <!-- Line 1: Title (Avenir Next - Largest) -->
+            <h2
+              class="font-title text-4xl sm:text-5xl md:text-6xl text-white tracking-tight"
+            >
+              Our Process
+            </h2>
+
+            <!-- Line 2: Subtitle (Unageo - Medium) -->
+            <p
+              class="font-subtitle text-xl sm:text-2xl text-white/85 leading-snug max-w-3xl"
+            >
+              Whether we’re building celebrity personas, launching brand
+              movements, or solving public challenges — here’s how we work:
+            </p>
+          </div>
+
+          <!-- Process Steps Grid (Body / Structure Cards) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            <!-- Step 1 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                1. Understand the Brief
+              </h3>
+              <p class="font-body text-base text-white/70">
+                We decode what’s said, what’s unsaid, and why it matters. This
+                is where the foundation of perception begins.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                2. Decode Behavior
+              </h3>
+              <p class="font-body text-base text-white/70">
+                We dive deep into psychology, audience patterns, and cultural
+                signals — so that what we create is not just creative, but
+                correctly wired.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                3. Design the Narrative
+              </h3>
+              <p class="font-body text-base text-white/70">
+                Every message is engineered to not just be seen, but felt and
+                remembered.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                4. Develop Communication Assets
+              </h3>
+              <p class="font-body text-base text-white/70">
+                From content to campaigns, we build assets that are platform-fit
+                — digital, physical, or phygital. We don’t just follow trends.
+                We often start them.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                5. Adapt & Amplify
+              </h3>
+              <p class="font-body text-base text-white/70">
+                We observe how the world reacts, learn from signals, and evolve
+                the message accordingly.
+              </p>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="sketch-card space-y-3">
+              <h3 class="font-subtitle text-xl text-red-500">
+                6. Reflect & Reinvent
+              </h3>
+              <p class="font-body text-base text-white/70">
+                We circle back, learn what shifted perception, and explore new
+                opportunities. What we build today should make tomorrow smarter.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION 4: WHO WE WORK WITH ==================== -->
+        <section id="partnerships" class="max-w-5xl mx-auto space-y-12">
+          <div class="space-y-4">
+            <!-- Line 1: Title (Avenir Next) -->
+            <h2
+              class="font-title text-4xl sm:text-5xl md:text-6xl text-white tracking-tight"
+            >
+              Who We Work With
+            </h2>
+
+            <!-- Line 2: Subtitle (Unageo) -->
+            <p
+              class="font-subtitle text-xl sm:text-2xl text-white/85 leading-snug max-w-3xl"
+            >
+              Over the years, we’ve collaborated with some of the most
+              influential names across music, media, and brands.
+            </p>
+          </div>
+
+          <!-- Categories Grid (Body: Louis George Cafe) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            <div class="sketch-card space-y-4">
+              <span
+                class="font-subtitle text-xs uppercase tracking-widest text-red-500"
+                >#ARTISTS</span
+              >
+              <p class="font-body text-lg text-white/90 leading-relaxed">
+                Badshah · Sunidhi Chauhan · Jasleen Royal · Tanishk Bagchi
+              </p>
+            </div>
+            <div class="sketch-card space-y-4">
+              <span
+                class="font-subtitle text-xs uppercase tracking-widest text-red-500"
+                >#LABELS</span
+              >
+              <p class="font-body text-lg text-white/90 leading-relaxed">
+                UMG · Saregama · T-Series · Artiste First
+              </p>
+            </div>
+            <div class="sketch-card space-y-4">
+              <span
+                class="font-subtitle text-xs uppercase tracking-widest text-red-500"
+                >#BRANDS</span
+              >
+              <p class="font-body text-lg text-white/90 leading-relaxed">
+                SonyLiv · Discovery · Hindustan Times · Nobel Chemist
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION 5: FOUNDER SECTION ==================== -->
+        <section id="founder-section" class="max-w-5xl mx-auto space-y-12">
+          <div class="space-y-4">
+            <!-- Line 1: Title (Avenir Next) -->
+            <h2
+              class="font-title text-4xl sm:text-5xl md:text-6xl text-white tracking-tight"
+            >
+              Team
+            </h2>
+
+            <!-- Line 2: Subtitle (Unageo) -->
+            <p
+              class="font-subtitle text-xl sm:text-2xl text-red-500 leading-snug"
+            >
+              Aakashraj Kusum Ambre — Founder & CEO · Behavioural Strategist ·
+              Celebrity Consultant
+            </p>
+          </div>
+
+          <!-- Body (Louis George Cafe) -->
+          <div class="sketch-card space-y-6 p-8 md:p-12">
+            <div
+              class="font-body text-base sm:text-lg md:text-xl text-white/80 space-y-4 leading-relaxed"
+            >
+              <p>
+                Aakashraj blends over a decade of experience in advertising,
+                celebrity marketing, and psychology-driven strategy.
+              </p>
+              <p>
+                BonBern is his brainchild — built to help individuals and brands
+                shape how they are seen, heard, and remembered.
+              </p>
+              <p>
+                From crafting iconic public personas to launching
+                culture-shifting campaigns, his approach combines behavioural
+                science, creative storytelling, and a deep understanding of
+                Indian culture, media, and tech.
+              </p>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 transition-colors"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 transition-colors"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-red-600 transition-colors"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION 6: CTA SECTION ==================== -->
+        <section
+          id="cta-section"
+          class="max-w-4xl mx-auto text-center space-y-8 py-12"
+        >
+          <!-- Line 1: Title (Avenir Next) -->
+          <h2
+            class="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+          >
+            Let’s Build Something Worth Remembering
+          </h2>
+
+          <!-- Line 2: Subtitle (Unageo) -->
+          <p
+            class="font-subtitle text-lg sm:text-xl text-white/80 max-w-2xl mx-auto"
+          >
+            Whether you’re building an image, launching a movement, or solving a
+            perception problem — we’re here to think it through with you.
+          </p>
+
+          <!-- Button (Unageo/Louis George Cafe) -->
+          <div class="pt-4">
+            <a
+              href="mailto:hello@bonbern.com"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-[#D0362B] hover:bg-[#b82f25] text-white rounded-full transition-colors group"
+            >
+              <span>Start a Conversation</span>
+              <i
+                class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT FOR NAVBAR ==================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const navDropdown = document.getElementById("nav-dropdown");
+        let isNavOpen = false;
+
+        if (hamburgerBtn && navDropdown) {
+          hamburgerBtn.addEventListener("click", () => {
+            isNavOpen = !isNavOpen;
+            navDropdown.classList.toggle("open", isNavOpen);
+          });
+
+          navDropdown.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+              isNavOpen = false;
+              navDropdown.classList.remove("open");
+            });
+          });
+
+          document.addEventListener("click", (e) => {
+            if (isNavOpen && !e.target.closest("#main-nav")) {
+              isNavOpen = false;
+              navDropdown.classList.remove("open");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
