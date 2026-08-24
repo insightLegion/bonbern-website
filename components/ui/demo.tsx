@@ -1,1 +1,1 @@
-export { DemoPage, DemoOne, TeamAccordionDemo, FooterCtaDemo, default } from "@/components/ui/demo"
+export { MarqueeAlongSvgPathDemo, Preview, DemoPage, DemoOne, TeamAccordionDemo, FooterCtaDemo, default } from "@/components/ui/demo"

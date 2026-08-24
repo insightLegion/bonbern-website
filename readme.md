@@ -138,9 +138,22 @@ Creating and maintaining the `/components/ui/` directory ensures compatibility w
 ### 2. `DynamicFrameLayout` (`dynamic-frame-layout.tsx`)
 - **Location**: [`src/components/ui/dynamic-frame-layout.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/dynamic-frame-layout.tsx) & [`components/ui/dynamic-frame-layout.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/dynamic-frame-layout.tsx)
 - **Exports**: `DynamicFrameLayout`, `Frame`
-- **Dependencies**: `framer-motion`
-- **Description**: An interactive fluid grid layout using Framer Motion that expands the hovered row and column dynamically while playing video/media backgrounds. Integrated into the **Our Process** section of [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with **6 process boxes** (2x3 grid) matching BonBern process steps.
+- **Description**: An interactive fluid grid layout that expands the hovered row and column dynamically while playing video/media backgrounds. Integrated into the **Our Process** section of [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with **6 process boxes** (2x3 grid) matching BonBern process steps.
 - **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `DemoPage` demonstrating standalone usage of `DynamicFrameLayout`.
+
+### 3. `MarqueeAlongSvgPath` (`marquee-along-svg-path.tsx`)
+- **Location**: [`src/components/ui/marquee-along-svg-path.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/marquee-along-svg-path.tsx) & [`components/ui/marquee-along-svg-path.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/marquee-along-svg-path.tsx)
+- **Exports**: `MarqueeAlongSvgPath`
+- **Dependencies**: `motion`
+- **Description**: Animates items along an arbitrary curved SVG path with support for scroll velocity, drag interaction, slow down on hover, dynamic z-indexing, and responsive scaling. Integrated directly beneath the About Us text in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with a minimalist GSAP `ScrollTrigger` fade-in effect (`y: 40, opacity: 0, stagger: 0.15`).
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `MarqueeAlongSvgPathDemo` demonstrating standalone usage.
+
+### 4. `TextRotate` (`text-rotate.tsx`)
+- **Location**: [`src/components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-rotate.tsx) & [`components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-rotate.tsx)
+- **Exports**: `TextRotate`
+- **Dependencies**: `motion`
+- **Description**: Rotates text arrays with word-by-word and character-by-character stagger spring animations using `motion/react`.
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `Preview` demonstrating standalone usage.
 
 ---
 
