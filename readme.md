@@ -155,7 +155,14 @@ Creating and maintaining the `/components/ui/` directory ensures compatibility w
 - **Description**: Staggered character, word, or line text animations with preset types (`blur`, `shake`, `scale`, `fade`, `slide`), customizable delay, and spring physics. Integrated throughout the **About Us** section in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with custom staggered delays.
 - **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `TextEffectWithCustomDelay`, `TextEffectPerChar`, and `TextEffectWithPreset`.
 
-### 5. `TextRotate` (`text-rotate.tsx`)
+### 5. `TextScrollAnimation` / `Skiper31` (`text-scroll-animation.tsx`)
+- **Location**: [`src/components/ui/text-scroll-animation.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-scroll-animation.tsx) & [`components/ui/text-scroll-animation.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-scroll-animation.tsx)
+- **Exports**: `CharacterV1`, `CharacterV2`, `CharacterV3`, `Bracket`, `Skiper31`, `BonBernTransitionSection`
+- **Dependencies**: `framer-motion`, `lenis`
+- **Description**: Scroll-driven character perspective and motion transforms (`x`, `rotateX`, `scale`, `opacity`). Integrated between the **Hero Landing Page** and the **About Us** section in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) to animate the 3 core brand lines one line at a time with custom perspective and styled bracket callouts.
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `TextScrollAnimationDemo` and `BonBernTransitionDemo`.
+
+### 6. `TextRotate` (`text-rotate.tsx`)
 - **Location**: [`src/components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-rotate.tsx) & [`components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-rotate.tsx)
 - **Exports**: `TextRotate`
 - **Dependencies**: `motion`

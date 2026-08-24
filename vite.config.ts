@@ -33,6 +33,7 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
+    exclude: ['lenis', 'lenis/react'],
   },
   plugins: [
     react(),

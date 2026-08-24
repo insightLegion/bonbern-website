@@ -1,4 +1,7 @@
 export {
+  Skiper31,
+  TextScrollAnimationDemo,
+  BonBernTransitionDemo,
   TextEffectPerChar,
   TextEffectWithPreset,
   TextEffectWithCustomDelay,

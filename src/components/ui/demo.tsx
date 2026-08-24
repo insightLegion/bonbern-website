@@ -89,34 +89,23 @@ export function DemoPage() {
 
 export function Preview() {
   return (
-    <div className="w-full h-full flex flex-col items-start p-8 bg-[#050505] text-white text-base sm:text-xl md:text-2xl leading-tight">
-      <TextRotate
-        texts={[
-          "We believe the world doesn’t move on logic — it moves on emotions, stories, and belief.",
-          "So we go beyond marketing — into minds, memories, and meaning.",
-          "We blend psychology with creativity to shape perception — from image-building to solving real-world problems.",
-        ]}
-        staggerFrom={"first"}
-        staggerDuration={0.01}
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -10 }}
-        transition={{ type: "spring", damping: 30, stiffness: 400 }}
-        rotationInterval={4000}
-        splitBy="words"
-      />
-      <div className="bg-[#e23028] w-2 h-2 sm:w-3 sm:h-3 rounded-full my-6" />
-      <TextRotate
-        texts={["BonBern Philosophy", "Behavior-First Consultancy", "Perception Building Lab"]}
-        staggerFrom={"first"}
-        staggerDuration={0.025}
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -10 }}
-        transition={{ type: "spring", damping: 30, stiffness: 400 }}
-        rotationInterval={4000}
-        splitBy="characters"
-      />
+    <div className="w-full h-full flex flex-col items-start p-8 bg-[#050505] text-white text-base sm:text-xl md:text-2xl leading-tight space-y-4">
+      <TextEffect
+        per="word"
+        preset="fade"
+        delay={0.2}
+      >
+        We believe the world doesn’t move on logic — it moves on emotions, stories, and belief.
+      </TextEffect>
+      <div className="bg-[#e23028] w-2 h-2 sm:w-3 sm:h-3 rounded-full my-2" />
+      <TextEffect
+        per="char"
+        preset="slide"
+        delay={0.6}
+        className="text-[#D0362B] font-bold tracking-wide uppercase text-sm sm:text-base"
+      >
+        BonBern Philosophy — Behavior-First Consultancy
+      </TextEffect>
     </div>
   )
 }
@@ -251,11 +240,22 @@ export function TextEffectWithCustomDelay() {
   );
 }
 
-export { DemoOne }
+import { Skiper31, BonBernTransitionSection } from "@/components/ui/text-scroll-animation"
+
+export function TextScrollAnimationDemo() {
+  return <Skiper31 />
+}
+
+export function BonBernTransitionDemo() {
+  return <BonBernTransitionSection />
+}
+
+export { DemoOne, Skiper31 }
 
 export default function Default() {
   return (
     <div className="w-full py-10 space-y-16">
+      <BonBernTransitionDemo />
       <TextEffectWithCustomDelay />
       <MarqueeAlongSvgPathDemo />
       <Preview />

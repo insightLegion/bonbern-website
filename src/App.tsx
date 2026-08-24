@@ -6,8 +6,8 @@ import { TailwindImageAccordion } from "@/components/ui/tailwind-image-accordion
 import { ImageAutoSlider } from "@/components/ui/image-auto-slider"
 import { DynamicFrameLayout, Frame } from "@/components/ui/dynamic-frame-layout"
 import { MarqueeAlongSvgPath } from "@/components/ui/marquee-along-svg-path"
-import { TextRotate } from "@/components/ui/text-rotate"
 import { TextEffect } from "@/components/ui/text-effect"
+import { BonBernTransitionSection } from "@/components/ui/text-scroll-animation"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -405,16 +405,12 @@ export default function App() {
             <p className="font-subtitle text-lg sm:text-xl md:text-2xl text-[#e23028] font-medium">
               Perception Building Lab
             </p>
-            <div className="font-body text-sm sm:text-base md:text-lg text-white/85 space-y-1 max-w-2xl mx-auto leading-relaxed">
-              <p>We work with celebrities to build iconic images.</p>
-              <p>We work with labels and brands to craft viral campaigns.</p>
-              <p className="text-white font-semibold pt-1">
-                And we are passionate about solving real-world problems — because we can, and we love it!
-              </p>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* ==================== TRANSITION: 3 LINES SCROLL ANIMATION ==================== */}
+      <BonBernTransitionSection />
 
       {/* ==================== PAGE 2: ABOUT US ==================== */}
       <section
