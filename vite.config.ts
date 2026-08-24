@@ -1,6 +1,12 @@
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 // Helper to recursively copy directories
 function copyDirSync(src: string, dest: string) {
@@ -19,32 +25,19 @@ function copyDirSync(src: string, dest: string) {
 
 // https://vite.dev/config/
 export default defineConfig({
-  server: {
-    open: '/structure/index2.html',
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        if (req.url === '/' || req.url === '/index.html') {
-          res.writeHead(302, { Location: '/structure/index2.html' });
-          res.end();
-        } else {
-          next();
-        }
-      });
-    }
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: 'structure/index2.html'
-      }
-    }
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   plugins: [
+    react(),
+    tailwindcss(),
     {
       name: 'copy-fonts',
       closeBundle() {
-        const src = path.resolve(import.meta.dirname || '', 'fonts')
-        const dest = path.resolve(import.meta.dirname || '', 'dist/fonts')
+        const src = path.resolve(__dirname, 'fonts')
+        const dest = path.resolve(__dirname, 'dist/fonts')
         if (fs.existsSync(src)) {
           copyDirSync(src, dest)
           console.log('Successfully copied fonts to dist/fonts')
@@ -53,3 +46,4 @@ export default defineConfig({
     }
   ]
 })
+
