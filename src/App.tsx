@@ -8,6 +8,7 @@ import { DynamicFrameLayout, Frame } from "@/components/ui/dynamic-frame-layout"
 import { MarqueeAlongSvgPath } from "@/components/ui/marquee-along-svg-path"
 import { TextEffect } from "@/components/ui/text-effect"
 import { BonBernTransitionSection } from "@/components/ui/text-scroll-animation"
+import LiquidMorphFloatingMenu from "@/components/ui/liquid-morph-floating-menu"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -292,80 +293,18 @@ export default function App() {
     return () => ctx.revert()
   }, [])
 
+  const menuItems = [
+    { label: "Home", onClick: () => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" }) },
+    { label: "About", onClick: () => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }) },
+    { label: "Process", onClick: () => document.getElementById("process-section")?.scrollIntoView({ behavior: "smooth" }) },
+    { label: "Partners", onClick: () => document.getElementById("partnerships")?.scrollIntoView({ behavior: "smooth" }) },
+    { label: "Founder", onClick: () => document.getElementById("founder-section")?.scrollIntoView({ behavior: "smooth" }) },
+  ]
+
   return (
     <div className="min-h-screen bg-[#050505] text-white">
-      {/* ==================== FLOATING PILL NAVBAR ==================== */}
-      <nav id="main-nav" className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="navbar-pill flex items-center gap-4 px-6 py-3 bg-white rounded-full shadow-2xl">
-          <a
-            href="#hero"
-            className="navbar-brand text-lg text-black select-none font-title font-bold"
-          >
-            BonBern
-          </a>
-          <button
-            id="hamburger-btn"
-            onClick={() => setIsNavOpen((prev) => !prev)}
-            className="flex flex-col gap-[5px] items-center justify-center w-8 h-8 cursor-pointer focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`w-5 h-[2px] bg-black transition-transform duration-200 ${
-                isNavOpen ? "rotate-45 translate-y-[3.5px]" : ""
-              }`}
-            ></span>
-            <span
-              className={`w-5 h-[2px] bg-black transition-transform duration-200 ${
-                isNavOpen ? "-rotate-45 -translate-y-[3.5px]" : ""
-              }`}
-            ></span>
-          </button>
-        </div>
-
-        {/* Dropdown */}
-        <div
-          id="nav-dropdown"
-          className={`navbar-dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl p-3 min-w-[210px] border border-black/5 ${
-            isNavOpen ? "open" : ""
-          }`}
-        >
-          <a
-            href="#hero"
-            onClick={() => setIsNavOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
-          >
-            <span className="text-[#e23028] text-xs w-4">●</span> Home
-          </a>
-          <a
-            href="#about-section"
-            onClick={() => setIsNavOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
-          >
-            <span className="text-[#e23028] text-xs w-4">●</span> About Us
-          </a>
-          <a
-            href="#process-section"
-            onClick={() => setIsNavOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
-          >
-            <span className="text-[#e23028] text-xs w-4">●</span> Our Process
-          </a>
-          <a
-            href="#partnerships"
-            onClick={() => setIsNavOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
-          >
-            <span className="text-[#e23028] text-xs w-4">●</span> Partnerships
-          </a>
-          <a
-            href="#founder-section"
-            onClick={() => setIsNavOpen(false)}
-            className="flex items-center gap-3 px-4 py-2.5 text-sm font-body text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-colors"
-          >
-            <span className="text-[#e23028] text-xs w-4">●</span> Founder
-          </a>
-        </div>
-      </nav>
+      {/* ==================== LIQUID MORPH FLOATING MENU ==================== */}
+      <LiquidMorphFloatingMenu items={menuItems} />
 
       {/* ==================== PAGE 1: HERO / LANDING PAGE ==================== */}
       <section

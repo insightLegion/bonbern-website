@@ -250,11 +250,23 @@ export function BonBernTransitionDemo() {
   return <BonBernTransitionSection />
 }
 
+import FloatingMenu from "@/components/ui/liquid-morph-floating-menu"
+
+export function FloatingMenuDemo() {
+  return (
+    <div className="w-full min-h-[300px] relative bg-[#ede8e4] p-10 rounded-2xl">
+      <h3 className="text-xl font-bold text-black mb-4">Floating Menu Demo</h3>
+      <FloatingMenu />
+    </div>
+  )
+}
+
 export { DemoOne, Skiper31 }
 
 export default function Default() {
   return (
     <div className="w-full py-10 space-y-16">
+      <FloatingMenuDemo />
       <BonBernTransitionDemo />
       <TextEffectWithCustomDelay />
       <MarqueeAlongSvgPathDemo />

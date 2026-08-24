@@ -162,12 +162,12 @@ Creating and maintaining the `/components/ui/` directory ensures compatibility w
 - **Description**: Scroll-driven character perspective and motion transforms (`x`, `rotateX`, `scale`, `opacity`). Integrated between the **Hero Landing Page** and the **About Us** section in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) to animate the 3 core brand lines one line at a time with custom perspective and styled bracket callouts.
 - **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `TextScrollAnimationDemo` and `BonBernTransitionDemo`.
 
-### 6. `TextRotate` (`text-rotate.tsx`)
-- **Location**: [`src/components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-rotate.tsx) & [`components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-rotate.tsx)
-- **Exports**: `TextRotate`
-- **Dependencies**: `motion`
-- **Description**: Rotates text arrays with word-by-word and character-by-character stagger spring animations using `motion/react`.
-- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `Preview` demonstrating standalone usage.
+### 6. `LiquidMorphFloatingMenu` (`liquid-morph-floating-menu.tsx`)
+- **Location**: [`src/components/ui/liquid-morph-floating-menu.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/liquid-morph-floating-menu.tsx) & [`components/ui/liquid-morph-floating-menu.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/liquid-morph-floating-menu.tsx)
+- **Exports**: `FloatingMenu`, `LiquidMorphFloatingMenu`
+- **Dependencies**: `framer-motion`
+- **Description**: Liquid morphing floating pill menu with expand/collapse spring physics, character hover slide animations, and dark circle expansion layer. Integrated as the primary navigation bar in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with smooth scroll targets (`Home`, `About`, `Process`, `Partners`, `Founder`).
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `FloatingMenuDemo`.
 
 ---
 
