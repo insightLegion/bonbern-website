@@ -1,1 +1,1 @@
-export { default } from "@/components/ui/demo"
+export { DemoPage, DemoOne, TeamAccordionDemo, FooterCtaDemo, default } from "@/components/ui/demo"

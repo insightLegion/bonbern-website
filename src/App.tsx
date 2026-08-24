@@ -1,6 +1,59 @@
 import { useState, useEffect } from "react"
 import { FooterCta } from "@/components/ui/ember-footer-cta"
 import { TailwindImageAccordion } from "@/components/ui/tailwind-image-accordion"
+import { ImageAutoSlider } from "@/components/ui/image-auto-slider"
+import { DynamicFrameLayout, Frame } from "@/components/ui/dynamic-frame-layout"
+
+const processFrames: Frame[] = [
+  {
+    id: 1,
+    stepNumber: "STEP 01",
+    title: "1. Understand the Brief",
+    description: "We decode what’s said, what’s unsaid, and why it matters. This is where the foundation of perception begins.",
+    video: "https://static.cdn-luma.com/files/981e483f71aa764b/Company%20Thing%20Exported.mp4",
+    defaultPos: { x: 0, y: 0, w: 4, h: 4 },
+  },
+  {
+    id: 2,
+    stepNumber: "STEP 02",
+    title: "2. Decode Behavior",
+    description: "We dive deep into psychology, audience patterns, and cultural signals — so that what we create is correctly wired.",
+    video: "https://static.cdn-luma.com/files/58ab7363888153e3/WebGL%20Exported%20(1).mp4",
+    defaultPos: { x: 4, y: 0, w: 4, h: 4 },
+  },
+  {
+    id: 3,
+    stepNumber: "STEP 03",
+    title: "3. Design the Narrative",
+    description: "Every message is engineered to not just be seen, but felt and remembered.",
+    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Jitter%20Exported%20Poster.mp4",
+    defaultPos: { x: 8, y: 0, w: 4, h: 4 },
+  },
+  {
+    id: 4,
+    stepNumber: "STEP 04",
+    title: "4. Develop Communication Assets",
+    description: "From content to campaigns, we build assets that are platform-fit — digital, physical, or phygital. We don’t just follow trends. We often start them.",
+    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Exported%20Web%20Video.mp4",
+    defaultPos: { x: 0, y: 4, w: 4, h: 4 },
+  },
+  {
+    id: 5,
+    stepNumber: "STEP 05",
+    title: "5. Adapt & Amplify",
+    description: "We observe how the world reacts, learn from signals, and evolve the message accordingly.",
+    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Logo%20Exported.mp4",
+    defaultPos: { x: 4, y: 4, w: 4, h: 4 },
+  },
+  {
+    id: 6,
+    stepNumber: "STEP 06",
+    title: "6. Reflect & Reinvent",
+    description: "We circle back, learn what shifted perception, and explore new opportunities. What we build today should make tomorrow smarter.",
+    video: "https://static.cdn-luma.com/files/58ab7363888153e3/Animation%20Exported%20(4).mp4",
+    defaultPos: { x: 8, y: 4, w: 4, h: 4 },
+  },
+]
 
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -196,60 +249,14 @@ export default function App() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  1. Understand the Brief
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  We decode what’s said, what’s unsaid, and why it matters. This is where the foundation of perception begins.
-                </p>
-              </div>
-
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  2. Decode Behavior
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  We dive deep into psychology, audience patterns, and cultural signals — so that what we create is not just creative, but correctly wired.
-                </p>
-              </div>
-
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  3. Design the Narrative
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  Every message is engineered to not just be seen, but felt and remembered.
-                </p>
-              </div>
-
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  4. Develop Communication Assets
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  From content to campaigns, we build assets that are platform-fit — digital, physical, or phygital. We don’t just follow trends. We often start them.
-                </p>
-              </div>
-
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  5. Adapt & Amplify
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  We observe how the world reacts, learn from signals, and evolve the message accordingly.
-                </p>
-              </div>
-
-              <div className="sketch-card space-y-3">
-                <h3 className="font-subtitle text-xl text-[#e23028] font-semibold">
-                  6. Reflect & Reinvent
-                </h3>
-                <p className="font-body text-base text-white/70">
-                  We circle back, learn what shifted perception, and explore new opportunities. What we build today should make tomorrow smarter.
-                </p>
-              </div>
+            {/* Interactive Dynamic 6-Frame Process Grid */}
+            <div className="pt-4">
+              <DynamicFrameLayout 
+                frames={processFrames} 
+                className="w-full" 
+                hoverSize={6}
+                gapSize={16}
+              />
             </div>
           </section>
 
@@ -262,6 +269,22 @@ export default function App() {
               <p className="font-subtitle text-xl sm:text-2xl text-white/85 leading-snug max-w-3xl font-medium">
                 Over the years, we’ve collaborated with some of the most influential names across music, media, and brands.
               </p>
+            </div>
+
+            {/* Infinite Image Auto Slider Showcase */}
+            <div className="pt-2 pb-2">
+              <ImageAutoSlider
+                images={[
+                  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop",
+                  "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
+                ]}
+              />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
