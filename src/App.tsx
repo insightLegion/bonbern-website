@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { FooterCta } from "@/components/ui/ember-footer-cta"
+import { TailwindImageAccordion } from "@/components/ui/tailwind-image-accordion"
 
 export default function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -291,8 +292,8 @@ export default function App() {
             </div>
           </section>
 
-          {/* ==================== SECTION 5: FOUNDER SECTION ==================== */}
-          <section id="founder-section" className="max-w-5xl mx-auto space-y-12">
+          {/* ==================== SECTION 5: TEAM SECTION WITH IMAGE ACCORDION ==================== */}
+          <section id="founder-section" className="max-w-5xl mx-auto space-y-10">
             <div className="space-y-4">
               <h2 className="font-title text-4xl sm:text-5xl md:text-6xl text-white tracking-tight font-bold">
                 Team
@@ -302,6 +303,10 @@ export default function App() {
               </p>
             </div>
 
+            {/* Interactive Image Accordion */}
+            <TailwindImageAccordion />
+
+            {/* Founder Biography Card */}
             <div className="sketch-card space-y-6 p-8 md:p-12">
               <div className="font-body text-base sm:text-lg md:text-xl text-white/80 space-y-4 leading-relaxed">
                 <p>
