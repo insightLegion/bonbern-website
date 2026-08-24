@@ -7,6 +7,7 @@ import { ImageAutoSlider } from "@/components/ui/image-auto-slider"
 import { DynamicFrameLayout, Frame } from "@/components/ui/dynamic-frame-layout"
 import { MarqueeAlongSvgPath } from "@/components/ui/marquee-along-svg-path"
 import { TextRotate } from "@/components/ui/text-rotate"
+import { TextEffect } from "@/components/ui/text-effect"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,19 +15,6 @@ const aboutPatternItems = [
   {
     type: "img",
     src: "https://cdn.cosmos.so/b9909337-7a53-48bc-9672-33fbd0f040a1?format=jpeg",
-  },
-  {
-    type: "svg",
-    content: (
-      <svg className="w-4 h-4 text-[#D0362B]" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-      </svg>
-    ),
-    bg: "bg-[#111111] border border-white/10",
-  },
-  {
-    type: "img",
-    src: "https://cdn.cosmos.so/ecdc9dd7-2862-4c28-abb1-dcc0947390f3?format=jpeg",
   },
   {
     type: "svg",
@@ -39,17 +27,29 @@ const aboutPatternItems = [
   },
   {
     type: "img",
+    src: "https://cdn.cosmos.so/ecdc9dd7-2862-4c28-abb1-dcc0947390f3?format=jpeg",
+  },
+  {
+    type: "svg",
+    content: (
+      <svg className="w-3.5 h-3.5 text-[#D0362B]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+      </svg>
+    ),
+    bg: "bg-[#111111] border border-white/10",
+  },
+  {
+    type: "img",
     src: "https://cdn.cosmos.so/79de41ec-baa4-4ac0-a9a4-c090005ca640?format=jpeg",
   },
   {
     type: "svg",
     content: (
-      <svg className="w-4 h-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" fill="none"/>
-        <path d="M12 7v5l3 3"/>
-      </svg>
+      <span className="font-subtitle text-[10px] uppercase font-bold tracking-widest text-[#D0362B]">
+        BB
+      </span>
     ),
-    bg: "bg-[#f4f4f5] border border-black/10",
+    bg: "bg-black border border-[#D0362B]/30",
   },
   {
     type: "img",
@@ -58,28 +58,15 @@ const aboutPatternItems = [
   {
     type: "svg",
     content: (
-      <span className="font-subtitle text-[11px] uppercase font-bold tracking-widest text-[#D0362B]">
-        BB
-      </span>
+      <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
     ),
-    bg: "bg-black border border-[#D0362B]/30",
+    bg: "bg-[#D0362B]",
   },
   {
     type: "img",
     src: "https://cdn.cosmos.so/d765f64f-7a66-462f-8b2d-3d7bc8d7db55?format=jpeg",
-  },
-  {
-    type: "svg",
-    content: (
-      <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-      </svg>
-    ),
-    bg: "bg-[#111111]",
-  },
-  {
-    type: "img",
-    src: "https://cdn.cosmos.so/6b9f08ea-f0c5-471f-a620-71221ff1fb65?format=jpeg",
   },
   {
     type: "svg",
@@ -92,7 +79,29 @@ const aboutPatternItems = [
   },
   {
     type: "img",
+    src: "https://cdn.cosmos.so/6b9f08ea-f0c5-471f-a620-71221ff1fb65?format=jpeg",
+  },
+  {
+    type: "svg",
+    content: (
+      <span className="font-title text-[11px] font-bold text-white">
+        01
+      </span>
+    ),
+    bg: "bg-[#111111]",
+  },
+  {
+    type: "img",
     src: "https://cdn.cosmos.so/40a09525-4b00-4666-86f0-3c45f5d77605?format=jpeg",
+  },
+  {
+    type: "svg",
+    content: (
+      <span className="font-title text-sm font-serif font-bold text-[#D0362B]">
+        g
+      </span>
+    ),
+    bg: "bg-white border border-black/10",
   },
   {
     type: "img",
@@ -101,9 +110,10 @@ const aboutPatternItems = [
   {
     type: "svg",
     content: (
-      <span className="font-title text-xs font-bold text-white">
-        01
-      </span>
+      <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v8M8 12h8" />
+      </svg>
     ),
     bg: "bg-[#D0362B]",
   },
@@ -112,25 +122,89 @@ const aboutPatternItems = [
     src: "https://cdn.cosmos.so/d05009a2-a2f8-4a4c-a0de-e1b0379dddb8?format=jpeg",
   },
   {
+    type: "svg",
+    content: (
+      <span className="font-title text-xs font-bold text-white">
+        02
+      </span>
+    ),
+    bg: "bg-[#111111]",
+  },
+  {
     type: "img",
     src: "https://cdn.cosmos.so/ba646e35-efc2-494a-961b-b40f597e6fc9?format=jpeg",
+  },
+  {
+    type: "svg",
+    content: (
+      <span className="font-title text-xs font-bold text-white">
+        ★
+      </span>
+    ),
+    bg: "bg-[#D0362B]",
   },
   {
     type: "img",
     src: "https://cdn.cosmos.so/e899f9c3-ed48-4899-8c16-fbd5a60705da?format=jpeg",
   },
   {
+    type: "svg",
+    content: (
+      <span className="font-title text-sm font-bold text-black">
+        A
+      </span>
+    ),
+    bg: "bg-[#fed7aa] border border-orange-300",
+  },
+  {
     type: "img",
     src: "https://cdn.cosmos.so/24e83c11-c607-45cd-88fb-5059960b56a0?format=jpeg",
+  },
+  {
+    type: "svg",
+    content: (
+      <svg className="w-3.5 h-3.5 text-[#D0362B]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    ),
+    bg: "bg-[#111111]",
   },
   {
     type: "img",
     src: "https://cdn.cosmos.so/cd346bce-f415-4ea7-8060-99c5f7c1741a?format=jpeg",
   },
+  {
+    type: "svg",
+    content: (
+      <span className="font-title text-xs font-bold text-white">
+        03
+      </span>
+    ),
+    bg: "bg-[#D0362B]",
+  },
+  {
+    type: "svg",
+    content: (
+      <span className="font-title text-xs font-bold text-black">
+        3
+      </span>
+    ),
+    bg: "bg-[#bbf7d0] border border-emerald-300",
+  },
+  {
+    type: "svg",
+    content: (
+      <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+      </svg>
+    ),
+    bg: "bg-[#111111]",
+  },
 ]
 
 const aboutMarqueePath =
-  "M1 209.434C58.5872 255.935 387.926 325.938 482.583 209.434C600.905 63.8051 525.516 -43.2211 427.332 19.9613C329.149 83.1436 352.902 242.723 515.041 267.302C644.752 286.966 943.56 181.94 995 156.5"
+  "M -40 60 C 160 170, 380 250, 620 220 C 720 205, 830 140, 800 50 C 760 -30, 640 30, 670 220 C 700 280, 950 270, 1160 200 C 1280 155, 1380 95, 1480 35"
 
 const processFrames: Frame[] = [
   {
@@ -346,62 +420,118 @@ export default function App() {
       <section
         id="about-section"
         ref={aboutRef}
-        className="about-section pt-16 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6 border-b border-black/10 relative overflow-visible"
+        className="about-section pt-10 pb-16 sm:pt-14 sm:pb-24 px-4 sm:px-6 border-b border-black/10 relative overflow-visible"
       >
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10">
+        <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 relative z-10">
           {/* Header Block */}
-          <div className="space-y-3 about-fade-el">
-            <h2 className="font-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#111111] uppercase tracking-tight font-bold">
+          <div className="space-y-2.5 about-fade-el">
+            <TextEffect
+              as="h2"
+              per="char"
+              preset="fade"
+              delay={0.2}
+              className="font-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#111111] uppercase tracking-tight font-bold"
+            >
               About Us
-            </h2>
-            <p className="font-subtitle text-xl sm:text-2xl md:text-3xl text-[#222222] leading-snug font-medium">
+            </TextEffect>
+            <TextEffect
+              as="p"
+              per="word"
+              preset="slide"
+              delay={0.5}
+              className="font-subtitle text-xl sm:text-2xl md:text-3xl text-[#222222] leading-snug font-medium"
+            >
               We’re a Think Tank — built for public figures, brands, and change-makers.
-            </p>
+            </TextEffect>
           </div>
 
-          <div className="about-fade-el font-body text-base sm:text-lg md:text-xl text-[#444444] space-y-3 leading-relaxed pt-2 border-t border-black/10">
-            <p>
-              BonBern Think Tank Studio is a{" "}
-              <span className="font-bold text-[#D0362B]">behavior-first</span> consultancy.
-            </p>
-            <p>
+          <div className="about-fade-el font-body text-base sm:text-lg md:text-xl text-[#444444] space-y-2.5 leading-relaxed pt-2 border-t border-black/10">
+            <TextEffect
+              as="p"
+              per="word"
+              delay={0.8}
+              variants={{
+                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
+                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
+              }}
+            >
+              BonBern Think Tank Studio is a behavior-first consultancy.
+            </TextEffect>
+            <TextEffect
+              as="p"
+              per="word"
+              delay={1.2}
+              variants={{
+                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
+                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
+              }}
+            >
               We believe the world doesn’t move on logic — it moves on emotions, stories, and belief.
-            </p>
-            <p>So we go beyond marketing — into minds, memories, and meaning.</p>
-            <p>
+            </TextEffect>
+            <TextEffect
+              as="p"
+              per="word"
+              delay={1.6}
+              variants={{
+                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
+                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
+              }}
+            >
+              So we go beyond marketing — into minds, memories, and meaning.
+            </TextEffect>
+            <TextEffect
+              as="p"
+              per="word"
+              delay={2.0}
+              variants={{
+                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
+                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
+              }}
+            >
               We blend psychology with creativity to shape perception — from image-building and viral campaigns to solving real-world problems that demand attention.
-            </p>
+            </TextEffect>
           </div>
 
           {/* Secret Subsection */}
-          <div className="about-fade-el sketch-card bg-black/5 border border-black/10 p-6 sm:p-8 rounded-2xl space-y-2">
-            <h3 className="font-subtitle text-xl sm:text-2xl text-[#e23028] font-semibold">
+          <div className="about-fade-el sketch-card bg-black/5 border border-black/10 p-5 sm:p-7 rounded-2xl space-y-2">
+            <TextEffect
+              as="h3"
+              per="char"
+              delay={2.3}
+              className="font-subtitle text-xl sm:text-2xl text-[#e23028] font-semibold"
+            >
               Our secret?
-            </h3>
-            <p className="font-body text-base sm:text-lg text-[#222222]">
+            </TextEffect>
+            <TextEffect
+              as="p"
+              per="word"
+              delay={2.5}
+              className="font-body text-base sm:text-lg text-[#222222]"
+            >
               A rare mix of psychological insight, creative storytelling, and tech-powered execution.
-            </p>
+            </TextEffect>
           </div>
         </div>
 
-        {/* Marquee Along SVG Path - Compact, smaller tiles, edge-to-edge continuous pattern */}
-        <div className="about-fade-el w-full max-w-full h-[220px] sm:h-[280px] md:h-[320px] relative -mt-4 sm:-mt-6 flex items-center justify-center pointer-events-auto overflow-visible">
+        {/* Marquee Along SVG Path - Extended Edge-to-Edge across entire screen with rich SVG pattern */}
+        <div className="about-fade-el w-screen relative left-1/2 -translate-x-1/2 h-[200px] sm:h-[240px] md:h-[280px] -mt-10 sm:-mt-14 md:-mt-18 flex items-center justify-center pointer-events-auto overflow-visible">
           <MarqueeAlongSvgPath
             path={aboutMarqueePath}
-            viewBox="0 0 996 330"
+            viewBox="0 0 1440 320"
             baseVelocity={7}
             slowdownOnHover={true}
             draggable={true}
             repeat={3}
             dragSensitivity={0.1}
-            className="w-full h-full scale-105 overflow-visible"
+            className="w-full h-full overflow-visible"
+            scaleMode="width"
             responsive
             grabCursor
           >
             {aboutPatternItems.map((item, i) => (
               <div
                 key={i}
-                className={`w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-lg sm:rounded-xl shadow-md overflow-hidden flex items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-150 ${
+                className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-md sm:rounded-lg shadow-sm overflow-hidden flex items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out hover:scale-150 ${
                   item.type === "svg" ? item.bg : "border border-black/10 bg-white"
                 }`}
               >
@@ -426,7 +556,7 @@ export default function App() {
         <div className="subtle-bg-image"></div>
         <div className="subtle-bg-overlay"></div>
 
-        <div className="subtle-bg-content space-y-32 py-24 md:py-36 px-6">
+        <div className="subtle-bg-content space-y-32 pt-28 pb-24 sm:pt-36 sm:pb-36 md:pt-44 md:pb-40 px-6">
           {/* ==================== SECTION 3: OUR PROCESS ==================== */}
           <section id="process-section" className="max-w-5xl mx-auto space-y-12">
             <div className="space-y-4">

@@ -90,6 +90,7 @@ export interface MarqueeAlongSvgPathProps {
 
   // Responsive properties
   responsive?: boolean
+  scaleMode?: "fit" | "width" | "height"
 }
 
 export const MarqueeAlongSvgPath = ({
@@ -140,6 +141,7 @@ export const MarqueeAlongSvgPath = ({
 
   // Responsive defaults
   responsive = false,
+  scaleMode = "fit",
 }: MarqueeAlongSvgPathProps) => {
   const container = useRef<HTMLDivElement>(null)
   const marqueeContainerRef = useRef<HTMLDivElement>(null)
@@ -167,7 +169,12 @@ export const MarqueeAlongSvgPath = ({
 
       const scaleX = wrapperWidth / originalWidth
       const scaleY = wrapperHeight / originalHeight
-      const scale = Math.min(scaleX, scaleY)
+      let scale = Math.min(scaleX, scaleY)
+      if (scaleMode === "width") {
+        scale = scaleX
+      } else if (scaleMode === "height") {
+        scale = scaleY
+      }
 
       // Calculate the scaled dimensions
       const scaledWidth = originalWidth * scale

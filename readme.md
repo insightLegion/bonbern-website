@@ -148,7 +148,14 @@ Creating and maintaining the `/components/ui/` directory ensures compatibility w
 - **Description**: Animates items along an arbitrary curved SVG path with support for scroll velocity, drag interaction, slow down on hover, dynamic z-indexing, and responsive scaling. Integrated directly beneath the About Us text in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with a minimalist GSAP `ScrollTrigger` fade-in effect (`y: 40, opacity: 0, stagger: 0.15`).
 - **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `MarqueeAlongSvgPathDemo` demonstrating standalone usage.
 
-### 4. `TextRotate` (`text-rotate.tsx`)
+### 4. `TextEffect` (`text-effect.tsx`)
+- **Location**: [`src/components/ui/text-effect.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-effect.tsx) & [`components/ui/text-effect.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-effect.tsx)
+- **Exports**: `TextEffect`
+- **Dependencies**: `framer-motion`
+- **Description**: Staggered character, word, or line text animations with preset types (`blur`, `shake`, `scale`, `fade`, `slide`), customizable delay, and spring physics. Integrated throughout the **About Us** section in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with custom staggered delays.
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `TextEffectWithCustomDelay`, `TextEffectPerChar`, and `TextEffectWithPreset`.
+
+### 5. `TextRotate` (`text-rotate.tsx`)
 - **Location**: [`src/components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/text-rotate.tsx) & [`components/ui/text-rotate.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/text-rotate.tsx)
 - **Exports**: `TextRotate`
 - **Dependencies**: `motion`
