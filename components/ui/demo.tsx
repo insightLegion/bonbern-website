@@ -1,4 +1,5 @@
 export {
+  Quote,
   FloatingMenuDemo,
   Skiper31,
   TextScrollAnimationDemo,

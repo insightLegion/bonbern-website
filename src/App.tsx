@@ -9,6 +9,7 @@ import { MarqueeAlongSvgPath } from "@/components/ui/marquee-along-svg-path"
 import { TextEffect } from "@/components/ui/text-effect"
 import { BonBernTransitionSection } from "@/components/ui/text-scroll-animation"
 import LiquidMorphFloatingMenu from "@/components/ui/liquid-morph-floating-menu"
+import { DotPattern } from "@/components/ui/dot-pattern-1"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -205,7 +206,7 @@ const aboutPatternItems = [
 ]
 
 const aboutMarqueePath =
-  "M -40 60 C 160 170, 380 250, 620 220 C 720 205, 830 140, 800 50 C 760 -30, 640 30, 670 220 C 700 280, 950 270, 1160 200 C 1280 155, 1380 95, 1480 35"
+  "M -40 40 C 200 150, 440 200, 720 160 C 820 140, 910 95, 880 60 C 850 30, 780 50, 800 145 C 820 210, 1040 185, 1240 140 C 1360 110, 1430 70, 1480 35"
 
 const processFrames: Frame[] = [
   {
@@ -338,9 +339,7 @@ export default function App() {
           </div>
           {/* Text Content */}
           <div className="max-w-4xl mx-auto space-y-3 mt-auto pb-4">
-            <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-white font-bold">
-              BonBern
-            </h1>
+            
             <p className="font-subtitle text-lg sm:text-xl md:text-2xl text-[#e23028] font-medium">
               Perception Building Lab
             </p>
@@ -355,10 +354,10 @@ export default function App() {
       <section
         id="about-section"
         ref={aboutRef}
-        className="about-section pt-10 pb-16 sm:pt-14 sm:pb-24 px-4 sm:px-6 border-b border-black/10 relative overflow-visible"
+        className="about-section pt-12 pb-16 sm:pt-16 sm:pb-24 px-4 sm:px-6 border-b border-black/10 relative overflow-visible"
       >
-        <div className="max-w-4xl mx-auto space-y-5 sm:space-y-6 relative z-10">
-          {/* Header Block */}
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10">
+          {/* Header Block (Outside the framed box) */}
           <div className="space-y-2.5 about-fade-el">
             <TextEffect
               as="h2"
@@ -380,76 +379,52 @@ export default function App() {
             </TextEffect>
           </div>
 
-          <div className="about-fade-el font-body text-base sm:text-lg md:text-xl text-[#444444] space-y-2.5 leading-relaxed pt-2 border-t border-black/10">
-            <TextEffect
-              as="p"
-              per="word"
-              delay={0.8}
-              variants={{
-                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
-                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
-              }}
-            >
-              BonBern Think Tank Studio is a behavior-first consultancy.
-            </TextEffect>
-            <TextEffect
-              as="p"
-              per="word"
-              delay={1.2}
-              variants={{
-                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
-                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
-              }}
-            >
-              We believe the world doesn’t move on logic — it moves on emotions, stories, and belief.
-            </TextEffect>
-            <TextEffect
-              as="p"
-              per="word"
-              delay={1.6}
-              variants={{
-                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
-                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
-              }}
-            >
-              So we go beyond marketing — into minds, memories, and meaning.
-            </TextEffect>
-            <TextEffect
-              as="p"
-              per="word"
-              delay={2.0}
-              variants={{
-                container: { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.03 } } },
-                item: { hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0, transition: { duration: 0.25 } } }
-              }}
-            >
-              We blend psychology with creativity to shape perception — from image-building and viral campaigns to solving real-world problems that demand attention.
-            </TextEffect>
-          </div>
+          {/* Framed Description Box with Sharp Unclipped Corner Squares & Subtle Dot Pattern */}
+          <div className="relative border border-[#D0362B] bg-white/80 backdrop-blur-[2px] p-6 sm:p-10 md:p-12 overflow-visible rounded-none shadow-sm">
+            {/* Inner Dot Pattern Container */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <DotPattern
+                width={16}
+                height={16}
+                cx={1}
+                cy={1}
+                cr={1}
+                className="fill-neutral-400/35 opacity-60 pointer-events-none"
+              />
+            </div>
 
-          {/* Secret Subsection */}
-          <div className="about-fade-el sketch-card bg-black/5 border border-black/10 p-5 sm:p-7 rounded-2xl space-y-2">
-            <TextEffect
-              as="h3"
-              per="char"
-              delay={2.3}
-              className="font-subtitle text-xl sm:text-2xl text-[#e23028] font-semibold"
-            >
-              Our secret?
-            </TextEffect>
-            <TextEffect
-              as="p"
-              per="word"
-              delay={2.5}
-              className="font-body text-base sm:text-lg text-[#222222]"
-            >
-              A rare mix of psychological insight, creative storytelling, and tech-powered execution.
-            </TextEffect>
+            {/* 4 Sharp Outer Corner Squares - unclipped and crisp */}
+            <div className="absolute -left-1.5 -top-1.5 w-3.5 h-3.5 bg-[#D0362B] pointer-events-none z-20" />
+            <div className="absolute -right-1.5 -top-1.5 w-3.5 h-3.5 bg-[#D0362B] pointer-events-none z-20" />
+            <div className="absolute -left-1.5 -bottom-1.5 w-3.5 h-3.5 bg-[#D0362B] pointer-events-none z-20" />
+            <div className="absolute -right-1.5 -bottom-1.5 w-3.5 h-3.5 bg-[#D0362B] pointer-events-none z-20" />
+
+            {/* Sharp Bold / Light Font Paired Description */}
+            <div className="about-fade-el font-title text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight text-[#111111] leading-snug space-y-4 relative z-10">
+              <p>
+                <span className="font-bold">"BonBern Think Tank Studio</span> is a{" "}
+                <span className="font-light">behavior-first</span> consultancy.
+              </p>
+              <p className="font-light text-[#222222]">
+                We believe the world doesn’t move on logic — it moves on{" "}
+                <span className="font-bold text-[#111111]">emotions</span>,{" "}
+                <span className="font-bold text-[#111111]">stories</span>, and{" "}
+                <span className="font-bold text-[#111111]">belief</span>.
+              </p>
+              <p className="font-light text-[#222222]">
+                So we go <span className="font-bold text-[#111111]">beyond marketing</span> — into minds, memories, and meaning.
+              </p>
+              <p>
+                <span className="font-light text-[#222222]">We blend psychology with creativity to </span>
+                <span className="font-bold text-[#111111]">shape perception</span>
+                <span className="font-light text-[#222222]"> — from image-building and viral campaigns to solving real-world problems that demand attention."</span>
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Marquee Along SVG Path - Extended Edge-to-Edge across entire screen with rich SVG pattern */}
-        <div className="about-fade-el w-screen relative left-1/2 -translate-x-1/2 h-[200px] sm:h-[240px] md:h-[280px] -mt-10 sm:-mt-14 md:-mt-18 flex items-center justify-center pointer-events-auto overflow-visible">
+        <div className="about-fade-el w-screen relative left-1/2 -translate-x-1/2 h-[200px] sm:h-[240px] md:h-[280px] mt-6 sm:mt-10 md:mt-14 flex items-center justify-center pointer-events-auto overflow-visible">
           <MarqueeAlongSvgPath
             path={aboutMarqueePath}
             viewBox="0 0 1440 320"

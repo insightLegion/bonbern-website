@@ -169,6 +169,12 @@ Creating and maintaining the `/components/ui/` directory ensures compatibility w
 - **Description**: Liquid morphing floating pill menu with expand/collapse spring physics, character hover slide animations, and dark circle expansion layer. Integrated as the primary navigation bar in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with smooth scroll targets (`Home`, `About`, `Process`, `Partners`, `Founder`).
 - **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `FloatingMenuDemo`.
 
+### 7. `DotPattern` (`dot-pattern-1.tsx`)
+- **Location**: [`src/components/ui/dot-pattern-1.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/dot-pattern-1.tsx) & [`components/ui/dot-pattern-1.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/components/ui/dot-pattern-1.tsx)
+- **Exports**: `DotPattern`
+- **Description**: SVG repeating geometric dot pattern overlay. Integrated into the **About Us** section text card in [`src/App.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/App.tsx) with framed bounding border (`border-[#D0362B]`) and 4 corner red box accents.
+- **Demo File**: [`src/components/ui/demo.tsx`](file:///e:/darshi/bonbern-website/bonbern-design/src/components/ui/demo.tsx) exports `Quote`.
+
 ---
 
 ## 🚀 Development Commands
